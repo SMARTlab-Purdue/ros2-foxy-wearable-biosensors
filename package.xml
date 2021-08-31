@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>ros2-foxy-wearable-biosensors</name>
+  <name>ros-foxy-biosensors</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="wonsu0513@gmail.com">heav101-pc1</maintainer>
+  <maintainer email="wonsu0513@gmail.com">Wonse Jo</maintainer>
   <license>TODO: License declaration</license>
 
   <test_depend>ament_copyright</test_depend>

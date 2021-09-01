@@ -1,0 +1,3 @@
+<launch>
+  <node name="zephyr_node" pkg="zephyr" type="zephyr_node.py" output="screen"/>
+</launch>

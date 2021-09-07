@@ -2,7 +2,7 @@ import os
 from glob import glob
 from setuptools import setup
 
-package_name = 'ros-foxy-biosensors'
+package_name = 'ros2-foxy-wearable-biosensors'
 
 setup(
     name=package_name,
@@ -23,8 +23,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'Emotiv_Insight_Node = ros-foxy-biosensors.emotiv_insight_node:main',
-            'Empatica_E4_Node = ros-foxy-biosensors.empatica_e4_node:main',
+            #'Emotiv_Insight_Node = ros2-foxy-wearable-biosensors.emotiv_insight_node:main',
+            #'Empatica_E4_Node = ros2-foxy-wearable-biosensors.empatica_e4_node:main',
         ],
     },
 )

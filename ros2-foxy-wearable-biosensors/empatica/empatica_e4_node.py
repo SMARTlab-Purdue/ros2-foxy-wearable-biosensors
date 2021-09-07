@@ -21,7 +21,7 @@ import numpy as np
 
 
 deviceID = 'CC34CD' #'A02358'=Subject A = CC34CD 
-e4_streaming_host_ip = '192.168.50.225' 
+e4_streaming_host_ip = '192.168.50.225' # on Windown machine installed E4 streaming server.
 e4_streaming_host_port = 28000
 bvp_chunk_data_length = 128
 
@@ -39,40 +39,43 @@ class ros2_reading_empatica_e4(Node):
         self.temp_data_index = 0
         self.temp_chunk_data = []
 
-        self.acc_imu_msg = Imu() #Need to update: http://docs.ros.org/en/hydro/api/segbot_sensors/html/imu_8py_source.html
-       
+        self.declare_parameter('Sensor_Enable', True) #Max 8
+        self.Parm_Sensor_Enable = self.get_parameter('Sensor_Enable').value 
+
+        self.declare_parameter('Sensor_Enable', True) #Max 8
+        self.Parm_Sensor_Enable = self.get_parameter('Sensor_Enable').value 
+        
         #====================================================#
         ####  Publisher Section                           ####
         #====================================================#
         # BVP data
-        self.pub_empatic_e4_bvp = self.create_publisher(Float32, 'physiological_sensor/empatica_e4/bvp', 10) 
-        self.pub_empatic_e4_bvp_chunck = self.create_publisher(Float32MultiArray, 'physiological_sensor/empatica_e4/bvp_chunk', 10) 
+        self.pub_empatic_e4_bvp = self.create_publisher(Float32, 'biosensors/empatica_e4/bvp', 10) 
+        self.pub_empatic_e4_bvp_chunck = self.create_publisher(Float32MultiArray, 'biosensors/empatica_e4/bvp_chunk', 10) 
         
         # GSR data
-        self.pub_empatic_e4_gsr = self.create_publisher(Float32, 'physiological_sensor/empatica_e4/gsr', 10)         
-        self.pub_empatic_e4_gsr_chunck = self.create_publisher(Float32MultiArray, 'physiological_sensor/empatica_e4/gsr_chunk', 10) 
-        self.pub_empatic_e4_gsr_chunck_avg = self.create_publisher(Float32, 'physiological_sensor/empatica_e4/gsr_chunk_avg', 10) 
+        self.pub_empatic_e4_gsr = self.create_publisher(Float32, 'biosensors/empatica_e4/gsr', 10)         
+        self.pub_empatic_e4_gsr_chunck = self.create_publisher(Float32MultiArray, 'biosensors/empatica_e4/gsr_chunk', 10) 
+        self.pub_empatic_e4_gsr_chunck_avg = self.create_publisher(Float32, 'biosensors/empatica_e4/gsr_chunk_avg', 10) 
 
         # Temperature data
-        self.pub_empatic_e4_temp = self.create_publisher(Float32, 'physiological_sensor/empatica_e4/st', 10)         
-        self.pub_empatic_e4_temp_chunck = self.create_publisher(Float32MultiArray, 'physiological_sensor/empatica_e4/st_chunk', 10) 
-        self.pub_empatic_e4_temp_chunck_avg = self.create_publisher(Float32, 'physiological_sensor/empatica_e4/st_chunk_avg', 10) 
+        self.pub_empatic_e4_temp = self.create_publisher(Float32, 'biosensors/empatica_e4/st', 10)         
+        self.pub_empatic_e4_temp_chunck = self.create_publisher(Float32MultiArray, 'biosensors/empatica_e4/st_chunk', 10) 
+        self.pub_empatic_e4_temp_chunck_avg = self.create_publisher(Float32, 'biosensors/empatica_e4/st_chunk_avg', 10) 
 
         # HR data
-        self.pub_empatic_e4_hr = self.create_publisher(Float32, 'physiological_sensor/empatica_e4/hr', 10)        
+        self.pub_empatic_e4_hr = self.create_publisher(Float32, 'biosensors/empatica_e4/hr', 10)        
 
         # IBI data
-        self.pub_empatic_e4_ibi = self.create_publisher(Float32, 'physiological_sensor/empatica_e4/ibi', 10)        
+        self.pub_empatic_e4_ibi = self.create_publisher(Float32, 'biosensors/empatica_e4/ibi', 10)        
 
         # ACC data
-        self.pub_empatic_e4_acc = self.create_publisher(Float32MultiArray, 'physiological_sensor/empatica_e4/acc', 10)        
-        self.pub_empatic_e4_acc_imu = self.create_publisher(Imu, 'physiological_sensor/empatica_e4/acc_imu', 10)    
+        self.pub_empatic_e4_acc = self.create_publisher(Float32MultiArray, 'biosensors/empatica_e4/acc', 10)        
 
         # BAT data
-        self.pub_empatic_e4_bat = self.create_publisher(Float32, 'physiological_sensor/empatica_e4/bat', 10)      
+        self.pub_empatic_e4_bat = self.create_publisher(Float32, 'biosensors/empatica_e4/bat', 10)      
 
         # Tag data (button on the E4)
-        self.pub_empatic_e4_tag = self.create_publisher(Empty, 'physiological_sensor/empatica_e4/tag', 10) 
+        self.pub_empatic_e4_tag = self.create_publisher(Empty, 'biosensors/empatica_e4/tag', 10) 
         
         with E4StreamingClient(e4_streaming_host_ip, e4_streaming_host_port) as client:
             devs = client.list_connected_devices()

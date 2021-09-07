@@ -5,5 +5,11 @@ This paper proposes a new wearable biosensors package for ROS 2 system that is c
 1) d
 2) d
 
-# ros2-foxy-wearable-biosensors
+
+# Included Subjective Questionaires
+
+1) SAM UI
+2) NASA-TLX UI
+
+# Acknowledgements
 This  material  is  based  upon  work  supported  by  the  Na-tional  Science  Foundation  under  Grant  No.  IIS-1846221and  byUCSC  Grant  number.  Any  opinions,  findings,  andconclusions  or  recommendations  expressed  in  this  materialare those of the author(s) and do not necessarily reflect theviews of the National Science Foundation andUCSC Grantaffiliation.

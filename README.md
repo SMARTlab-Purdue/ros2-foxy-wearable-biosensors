@@ -1,5 +1,4 @@
 # ros2-foxy-wearable-biosensors
-![GitHub markdown](https://github.com/SMARTlab-Purdue/SMARTmBOT/blob/main/media/wiki/SMARTmBOT_GitHub.jpg)
 
 
 This paper proposes a new wearable biosensor package for ROS 2 system that is capable of lowering technology entry barrier and expanding the biosensor ecosystem in the robotics field. The wearable type of the biosensors has advantages to develop real-world human-robot interaction (HRI) system since there are no behavioral constraints compared to wired devices. Each biosensor nodes in the package follows a generalized node structure and topic information for user to easily utilize the package. Additionally, we validate the published data from each nodes by comparing to outcomes of reference programs that manufacturer of each biosensor officially provide to read data. Later, we propose one of potential HRI applications applied the proposed package.

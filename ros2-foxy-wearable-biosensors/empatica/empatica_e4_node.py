@@ -1,7 +1,7 @@
 ## This ROS2 node for reading Empatica E4 is developed based on the Manuel Olguín Muñoz's open-e4-client  (github: molguin92)
 ## If you want to see more detail without ROS2, please visit his/her github; https://github.com/molguin92/open-e4-client
 
-#ROS2 Lib
+#ROS2 Libs.
 import rclpy
 from rclpy.node import Node
 from rclpy.parameter import Parameter
@@ -10,20 +10,14 @@ from geometry_msgs.msg import Twist, Quaternion, Vector3
 from std_msgs.msg import Empty, Float32, Float32MultiArray
 from sensor_msgs.msg import Imu
 
-
-#Emotiv Lib
+#Emotiv Libs.
 ## Need to add a window machine for running LSL and connecting with Empatica
 import time
 from e4client import * # you need to install open-e4-client: $ pip install open-e4-client
 
+#Python Libs.
 import sys
 import numpy as np
-
-
-deviceID = 'CC34CD' #'A02358'=Subject A = CC34CD 
-e4_streaming_host_ip = '192.168.50.225' # on Windown machine installed E4 streaming server.
-e4_streaming_host_port = 28000
-bvp_chunk_data_length = 128
 
 
 class ros2_reading_empatica_e4(Node):
@@ -39,60 +33,65 @@ class ros2_reading_empatica_e4(Node):
         self.temp_data_index = 0
         self.temp_chunk_data = []
 
+        # For the generlized structure of ROS2 Node
         self.declare_parameter('Sensor_Enable', True) #Max 8
         self.Parm_Sensor_Enable = self.get_parameter('Sensor_Enable').value 
-
-        self.declare_parameter('Sensor_Enable', True) #Max 8
-        self.Parm_Sensor_Enable = self.get_parameter('Sensor_Enable').value 
+        self.declare_parameter('Chunk_Enable', True) #Max 8
+        self.Parm_Chunk_Enable = self.get_parameter('Chunk_Enable').value 
+        self.declare_parameter('Chunk_Length', 128) #Max 8
+        self.Parm_Chunk_Length = self.get_parameter('Chunk_Length').value 
         
+        # For the E4 streaming server.
+        self.declare_parameter('DeviceID', 'CC34CD') #ex) 'A02358'=Subject A = CC34CD 
+        self.Parm_DeviceID = self.get_parameter('DeviceID').value 
+        self.declare_parameter('E4_Host_IP', '192.168.50.225') # on Windown machine installed E4 streaming server.
+        self.Parm_E4_Host_IP = self.get_parameter('E4_Host_IP').value 
+        self.declare_parameter('E4_Host_Port', 28000) # on Windown machine installed E4 streaming server.
+        self.Parm_E4_Host_Port = self.get_parameter('E4_Host_Port').value 
+
+
         #====================================================#
         ####  Publisher Section                           ####
         #====================================================#
-        # BVP data
+        # BVP data 
         self.pub_empatic_e4_bvp = self.create_publisher(Float32, 'biosensors/empatica_e4/bvp', 10) 
-        self.pub_empatic_e4_bvp_chunck = self.create_publisher(Float32MultiArray, 'biosensors/empatica_e4/bvp_chunk', 10) 
-        
         # GSR data
         self.pub_empatic_e4_gsr = self.create_publisher(Float32, 'biosensors/empatica_e4/gsr', 10)         
-        self.pub_empatic_e4_gsr_chunck = self.create_publisher(Float32MultiArray, 'biosensors/empatica_e4/gsr_chunk', 10) 
-        self.pub_empatic_e4_gsr_chunck_avg = self.create_publisher(Float32, 'biosensors/empatica_e4/gsr_chunk_avg', 10) 
-
         # Temperature data
         self.pub_empatic_e4_temp = self.create_publisher(Float32, 'biosensors/empatica_e4/st', 10)         
-        self.pub_empatic_e4_temp_chunck = self.create_publisher(Float32MultiArray, 'biosensors/empatica_e4/st_chunk', 10) 
-        self.pub_empatic_e4_temp_chunck_avg = self.create_publisher(Float32, 'biosensors/empatica_e4/st_chunk_avg', 10) 
-
         # HR data
         self.pub_empatic_e4_hr = self.create_publisher(Float32, 'biosensors/empatica_e4/hr', 10)        
-
         # IBI data
         self.pub_empatic_e4_ibi = self.create_publisher(Float32, 'biosensors/empatica_e4/ibi', 10)        
-
         # ACC data
         self.pub_empatic_e4_acc = self.create_publisher(Float32MultiArray, 'biosensors/empatica_e4/acc', 10)        
-
         # BAT data
         self.pub_empatic_e4_bat = self.create_publisher(Float32, 'biosensors/empatica_e4/bat', 10)      
-
         # Tag data (button on the E4)
         self.pub_empatic_e4_tag = self.create_publisher(Empty, 'biosensors/empatica_e4/tag', 10) 
-        
-        with E4StreamingClient(e4_streaming_host_ip, e4_streaming_host_port) as client:
+
+        if self.Parm_Chunk_Enable:
+            self.pub_empatic_e4_bvp_chunck = self.create_publisher(Float32MultiArray, 'biosensors/empatica_e4/bvp_chunk', 10) 
+            self.pub_empatic_e4_gsr_chunck = self.create_publisher(Float32MultiArray, 'biosensors/empatica_e4/gsr_chunk', 10) 
+            self.pub_empatic_e4_temp_chunk = self.create_publisher(Float32MultiArray, 'biosensors/empatica_e4/st_chunk', 10)         
+
+
+        with E4StreamingClient(self.Parm_E4_Host_IP, self.Parm_E4_Host_Port) as client:
             devs = client.list_connected_devices()
             #print(devs[0], type(devs[0]))
             #connecting_devices= deviceID # Was devs[0] \
             try:
-                with client.connect_to_device(deviceID) as conn:
-                    conn.subscribe_to_stream(E4DataStreamID.BVP, self.extract_data)
-                    conn.subscribe_to_stream(E4DataStreamID.GSR, self.extract_data)
-                    conn.subscribe_to_stream(E4DataStreamID.TEMP, self.extract_data)
-                    conn.subscribe_to_stream(E4DataStreamID.HR, self.extract_data)
-                    conn.subscribe_to_stream(E4DataStreamID.IBI, self.extract_data)
-                    conn.subscribe_to_stream(E4DataStreamID.TAG, self.extract_data)
-                    conn.subscribe_to_stream(E4DataStreamID.ACC, self.extract_data)
-                    conn.subscribe_to_stream(E4DataStreamID.BAT, self.extract_data)
+                with client.connect_to_device(self.Parm_DeviceID) as conn:
+                    if self.Parm_Sensor_Enable:
+                        conn.subscribe_to_stream(E4DataStreamID.BVP, self.extract_data)
+                        conn.subscribe_to_stream(E4DataStreamID.GSR, self.extract_data)
+                        conn.subscribe_to_stream(E4DataStreamID.TEMP, self.extract_data)
+                        conn.subscribe_to_stream(E4DataStreamID.HR, self.extract_data)
+                        conn.subscribe_to_stream(E4DataStreamID.IBI, self.extract_data)
+                        conn.subscribe_to_stream(E4DataStreamID.TAG, self.extract_data)
+                        conn.subscribe_to_stream(E4DataStreamID.ACC, self.extract_data)
+                        conn.subscribe_to_stream(E4DataStreamID.BAT, self.extract_data)
 
-                    #time.sleep(10.0) # limited running time.
                     while rclpy.ok():   
                         pass
 
@@ -102,48 +101,48 @@ class ros2_reading_empatica_e4(Node):
                 
     def extract_data(self, stream_id, timestamp, *sample) -> None:
         if stream_id.name == "BVP":
-            # need to make it chuck data
+            # need to make it chuck data            
             self.pub_empatic_e4_bvp.publish(Float32(data = sample[0]))
-            self.bvp_chunk_data.append(sample[0])
-            #print(self.bvp_data_index, stream_id.name, timestamp, sample) #For test
-            if self.bvp_data_index  == bvp_chunk_data_length - 1:
-                # publish chunk
-                self.pub_empatic_e4_bvp_chunck.publish(Float32MultiArray(data = self.bvp_chunk_data))
-                #print(self.bvp_chunk_data) #For test
-                
-                #Reset index and ref_array
-                self.bvp_chunk_data = []
-                self.bvp_data_index = 0
-            else:
-                self.bvp_data_index += 1
+            if self.Parm_Chunk_Enable:
+                self.bvp_chunk_data.append(sample[0])
+                #print(self.bvp_data_index, stream_id.name, timestamp, sample) #For test
+
+                if self.bvp_data_index  == self.Parm_Chunk_Length - 1:
+                    # publish chunk
+                    self.pub_empatic_e4_bvp_chunck.publish(Float32MultiArray(data = self.bvp_chunk_data))
+                    #print(self.bvp_chunk_data) #For test
+                    
+                    #Reset index and ref_array
+                    self.bvp_chunk_data = []
+                    self.bvp_data_index = 0
+                else:
+                    self.bvp_data_index += 1
+            
                 
         elif stream_id.name == "GSR":
             self.pub_empatic_e4_gsr.publish(Float32(data = sample[0]))
             self.gsr_chunk_data.append(sample[0])
             #print(self.gsr_data_index, stream_id.name, timestamp, sample) #For test
-            if self.gsr_data_index  == 5:
-                # publish chunk
-                self.pub_empatic_e4_gsr_chunck.publish(Float32MultiArray(data = self.gsr_chunk_data))
-                #print(np.mean(self.gsr_chunk_data, dtype=np.float64)) #For test
-                gsr_chunk_avg = np.mean(self.gsr_chunk_data, dtype=np.float64)
-                self.pub_empatic_e4_gsr_chunck_avg.publish(Float32(data =gsr_chunk_avg))
-                
-                #Reset index and ref_array
-                self.gsr_chunk_data = []
-                self.gsr_data_index = 0
-            else:
-                self.gsr_data_index += 1
+            if self.Parm_Chunk_Enable:
+                if self.gsr_data_index  == 5:
+                    # publish chunk
+                    self.pub_empatic_e4_gsr_chunck.publish(Float32MultiArray(data = self.gsr_chunk_data))
+                    #print(np.mean(self.gsr_chunk_data, dtype=np.float64)) #For test
+                    
+                    #Reset index and ref_array
+                    self.gsr_chunk_data = []
+                    self.gsr_data_index = 0
+                else:
+                    self.gsr_data_index += 1
 
-        elif stream_id.name == "TEMP":
-            self.pub_empatic_e4_temp.publish(Float32(data = sample[0]))
+        elif stream_id.name == "TEMP": # Sampling rate: 
             self.temp_chunk_data.append(sample[0])
             #print(self.temp_data_index, stream_id.name, timestamp, sample) #For test
             if self.temp_data_index  == 7:
                 # publish chunk
-                self.pub_empatic_e4_temp_chunck.publish(Float32MultiArray(data = self.temp_chunk_data))
-                #print(np.mean(self.temp_chunk_data, dtype=np.float64)) #For test
+                self.pub_empatic_e4_temp_chunk.publish(Float32MultiArray(data = self.temp_chunk_data))
                 temp_chunk_avg = np.mean(self.temp_chunk_data, dtype=np.float64)
-                self.pub_empatic_e4_temp_chunck_avg.publish(Float32(data =temp_chunk_avg))
+                self.pub_empatic_e4_temp.publish(Float32(data =temp_chunk_avg))
                 
                 #Reset index and ref_array
                 self.temp_chunk_data = []
@@ -163,7 +162,7 @@ class ros2_reading_empatica_e4(Node):
             acc_data = [sample[0], sample[1], sample[2]]
             self.pub_empatic_e4_acc.publish(Float32MultiArray(data = acc_data))
             
-            # Need to find more details regarding the accelerometer
+            # Need to find more details regarding the accelerometer for v0.0.2
             #self.acc_imu_msg.header.frame_id = "empatica_e4"
             #self.acc_imu_msg.angular_velocity.x=sample[0]
             #self.acc_imu_msg.angular_velocity.y=sample[1]
@@ -177,7 +176,6 @@ class ros2_reading_empatica_e4(Node):
         elif stream_id.name == "BAT":
             self.pub_empatic_e4_bat.publish(Float32(data = sample[0]))
             #print(sample[0])
-
         else:
             print("Unknown Errors")
 

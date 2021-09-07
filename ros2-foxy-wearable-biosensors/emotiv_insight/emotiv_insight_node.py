@@ -1,11 +1,11 @@
-
+## This ROS2 node for reading Emotiv Insight is developed based on an example of cortex-v2. If you want to see more detail without ROS2, please visit the emotive github; https://github.com/Emotiv/cortex-v2-example
 import rclpy
 from rclpy.node import Node
 from rclpy.parameter import Parameter
 
 
 from geometry_msgs.msg import Twist, Quaternion, Vector3
-from std_msgs.msg import Float32MultiArray, MultiArrayDimension
+from std_msgs.msg import Float32MultiArray, MultiArrayDimension, MultiArrayLayout
 from sensor_msgs.msg import Imu, MagneticField
 
 
@@ -49,25 +49,28 @@ user_details = {
 	"debit" : 100
 }
 
-user_CCTV = {
+user_details = {
 	"license" : "60060faf-4c7f-4306-9d52-8c9db73d82ae",
 	"client_id" : "uUR1sorcCJenNb168xSA5h3Cr1NDLztgpBBRUEv7",
 	"client_secret" : "w7O7fJ9gKvN5GJptiJY6vbo29RqMcAliC5g0pIDWTjKdA53kKtz8zuYEkKENaWZgY9dFAW6xH9jYMMDPxQ09qY4uwwQHeqyvaqgNLM1eu3wGz2OH7T81W8MzfySPvvIK",
 	"debit" : 100
 }
 
-user_perception = {
-	"license" : "60060faf-4c7f-4306-9d52-8c9db73d82ae",
-	"client_id" : "b9C0tgjnMmt6GJUc253XgklI1XUt9VMZgyGOS7KH",
-	"client_secret" : "0KXSdra07LdsTmsYYUGxEoT9SNEptYMjIQT50uis58xwNhslSYEDnYGdkkMH2XJ5qjn56sm0XZPVyBegmi2hGFOC5OOivd8XYluXG3fQKv9vWRbCtj81HHSKwG3LQtMP",
-	"debit" : 100
-}
 
-user = user_CCTV
+user = user_details
 
-class ros2_reading_emotiv_insight(Node):
+class ros2_emotiv_insight(Node):
     def __init__(self, user, debug_mode=False):
-        super().__init__('reading_emotiv_insight_node')
+        super().__init__('emotiv_insight_node')
+        
+        # For the generlized structure of ROS2 Node
+        self.declare_parameter('Sensor_Enable', True) # Enable to publish sensor data (true)
+        self.Parm_Sensor_Enable = self.get_parameter('Sensor_Enable').value 
+        self.declare_parameter('Chunk_Enable', True) # Enable to publish chunk data (true)
+        self.Parm_Chunk_Enable = self.get_parameter('Chunk_Enable').value 
+        self.declare_parameter('Chunk_Length', 128) # Define the length of the chunk data
+        self.Parm_Chunk_Length = self.get_parameter('Chunk_Length').value
+
 
         # Emotiv Setting
         url = "wss://localhost:6868"
@@ -75,66 +78,77 @@ class ros2_reading_emotiv_insight(Node):
                                             sslopt={"cert_reqs": ssl.CERT_NONE})
         self.user = user
         self.debug = debug_mode
-        
-        self.data_size = 128
-        self.data_size = self.data_size - 1
 
-        self.bool_act_chunk = False
+        self.data_size = self.Parm_Chunk_Length - 1
+        self.bool_act_chunk_eeg = False
+        self.bool_act_chunk_pow = False
 
-        self.do_prepare_steps()
-      
+        self.do_prepare_steps()     
 
         self.imu_msg = Imu()
         self.mag_msg = MagneticField()
 
-        # let's build a 3x3 matrix for EEG Chuck:
-        self.eeg_chuck_msg = Float32MultiArray()
-        self.eeg_chuck_msg.layout.dim.append(MultiArrayDimension())
-        self.eeg_chuck_msg.layout.dim.append(MultiArrayDimension())
-        self.eeg_chuck_msg.layout.dim[0].label = "['COUNTER','INTERPOLATED','AF3','T7','Pz','T8','AF4','RAW_CQ']"
-        self.eeg_chuck_msg.layout.dim[1].label = "Length" #data size 128 (default)
+        self.eeg_dimension_layout= MultiArrayLayout()
+        self.eeg_dimension_layout.dim.append(MultiArrayDimension(label = "[COUNTER,INTERPOLATED,AF3,T7,Pz,T8,AF4,RAW_CQ]", size = 8))
+
+        self.pow_dimension_layout= MultiArrayLayout()
+        self.pow_dimension_layout.dim.append(MultiArrayDimension(label = "[AF3/theta, AF3/alpha, AF3/betaL, AF3/betaH, AF3/gamma, T7/theta, T7/alpha, T7/betaL, T7/betaH, T7/gamma, Pz/theta, Pz/alpha, Pz/betaL, Pz/betaH, Pz/gamma,T8/theta, T8/alpha, T8/betaL, T8/betaH, T8/gamma, AF4/theta, AF4/alpha, AF4/betaL, AF4/betaH, AF4/gamma]", size = 25))
+
+
+        # let's build a matrix for EEG Chunk:
+        self.eeg_chunk_msg = Float32MultiArray()
+        self.eeg_chunk_msg.layout.dim.append(MultiArrayDimension())
+        self.eeg_chunk_msg.layout.dim.append(MultiArrayDimension())
+        self.eeg_chunk_msg.layout.dim[0].label = "['COUNTER','INTERPOLATED','AF3','T7','Pz','T8','AF4','RAW_CQ']"
+        self.eeg_chunk_msg.layout.dim[1].label = "Length" #data size 128 (default)
 
         #"COUNTER","INTERPOLATED","AF3","T7","Pz","T8","AF4","RAW_CQ"
-        self.eeg_chuck_msg.layout.dim[0].size = 8
-        self.eeg_chuck_msg.layout.dim[1].size = self.data_size+1
-        self.eeg_chuck_msg.layout.dim[0].stride = 8*(self.data_size+1)
-        self.eeg_chuck_msg.layout.dim[1].stride = 8
-        self.eeg_chuck_msg.layout.data_offset = 0
+        self.eeg_chunk_msg.layout.dim[0].size = 8
+        self.eeg_chunk_msg.layout.dim[1].size = self.data_size+1
+        self.eeg_chunk_msg.layout.dim[0].stride = 8*(self.data_size+1)
+        self.eeg_chunk_msg.layout.dim[1].stride = 8
+        self.eeg_chunk_msg.layout.data_offset = 0
 
-        self.eeg_chuck_msg_data = np.zeros(8*(self.data_size + 1), dtype=np.float32)
-
-
-        #====================================================#
-        ####  Publisher Section                           ####
-        #====================================================#
-        self.pub_emotiv_insight_eeg= self.create_publisher(Float32MultiArray, 'physiological_sensor/emotiv_insight/eeg', 10) #The raw EEG data from the headset.
-        self.pub_emotiv_insight_eeg_chuck= self.create_publisher(Float32MultiArray, 'physiological_sensor/emotiv_insight/eeg_chunk', 10) #The raw EEG data from the headset.
-
-        self.pub_emotiv_insight_mot = self.create_publisher(Float32MultiArray, 'physiological_sensor/emotiv_insight/mot', 10) #The motion data from the headset.
-        self.pub_emotiv_insight_mot_imu = self.create_publisher(Imu, 'physiological_sensor/emotiv_insight/mot_imu', 10) #The motion data from the headset.
-        self.pub_emotiv_insight_mot_mag = self.create_publisher(MagneticField, 'physiology/emotiv_insight/mot_mag', 10) #The motion data from the headset.
-
-        self.pub_emotiv_insight_pow = self.create_publisher(Float32MultiArray, 'physiological_sensor/emotiv_insight/pow', 10) #The band power of each EEG sensor. It includes the alpha, low beta, high beta, gamma, and theta bands.
-        self.pub_emotiv_insight_met = self.create_publisher(Float32MultiArray, 'physiological_sensor/emotiv_insight/met', 10) #The results of the performance metrics detection.
-        self.pub_emotiv_insight_dev = self.create_publisher(Float32MultiArray, 'physiological_sensor/emotiv_insight/dev', 10) #It includes the battery level, the wireless signal strength, and the contact quality of each EEG sensor..
-       
+        self.eeg_chunk_msg_data = np.zeros(8*(self.data_size + 1), dtype=np.float32)
 
 
-        # Streaming data
-        '''
-        #eeg= The raw EEG data from the headset.
-        #mot=The motion data from the headset.
-        #pow=The band power of each EEG sensor. It includes the alpha, low beta, high beta, gamma, and theta bands.
-        #met=The results of the performance metrics detection.
-        #com=The results of the mental commands detection. You must load a profile to get meaningful results.
-        #fac=The results of the facial expressions detection.
-        #sys=The system events. These events are related to the training of the mental commands and facial expressions. See BCI for details.
-        '''
-        streams = ['eeg', 'mot', 'pow', 'met', 'dev']
-        self.sub_request(streams)
+        
+        
+        if self.Parm_Sensor_Enable:
+            #====================================================#
+            ####  Publisher Section                           ####
+            #====================================================#
+            self.pub_emotiv_insight_eeg= self.create_publisher(Float32MultiArray, 'biosensors/emotiv_insight/eeg', 10) #The raw EEG data from the headset.
+            self.pub_emotiv_insight_mot = self.create_publisher(Float32MultiArray, 'biosensors/emotiv_insight/mot', 10) #The motion data from the headset.
+
+            self.pub_emotiv_insight_mot_imu = self.create_publisher(Imu, 'biosensors/emotiv_insight/mot_imu', 10) #The motion data from the headset.
+            self.pub_emotiv_insight_mot_mag = self.create_publisher(MagneticField, 'biosensors/emotiv_insight/mot_mag', 10) #The motion data from the headset.
+
+            self.pub_emotiv_insight_pow = self.create_publisher(Float32MultiArray, 'biosensors/emotiv_insight/pow', 10) #The band power of each EEG sensor. It includes the alpha, low beta, high beta, gamma, and theta bands.
+            self.pub_emotiv_insight_met = self.create_publisher(Float32MultiArray, 'biosensors/emotiv_insight/met', 10) #The results of the performance metrics detection.
+            self.pub_emotiv_insight_dev = self.create_publisher(Float32MultiArray, 'biosensors/emotiv_insight/dev', 10) #It includes the battery level, the wireless signal strength, and the contact quality of each EEG sensor..
+
+            if self.Parm_Chunk_Enable:
+                self.pub_emotiv_insight_eeg_chunk= self.create_publisher(Float32MultiArray, 'biosensors/emotiv_insight/eeg_chunk', 10) #The raw EEG data from the headset.
+                
+
+            # Streaming data
+            '''
+            #eeg= The raw EEG data from the headset.
+            #mot=The motion data from the headset.
+            #pow=The band power of each EEG sensor. It includes the alpha, low beta, high beta, gamma, and theta bands.
+            #met=The results of the performance metrics detection.
+            #com=The results of the mental commands detection. You must load a profile to get meaningful results.
+            #fac=The results of the facial expressions detection.
+            #sys=The system events. These events are related to the training of the mental commands and facial expressions. See BCI for details.
+            '''
+            streams = ['eeg', 'mot', 'pow', 'met', 'dev']
+            #streams = ['met', 'dev']
+
+            self.sub_request(streams)
 
     def query_headset(self):
-        print('query headset --------------------------------')        
+        #print('query headset --------------------------------')        
         query_headset_request = {
             "jsonrpc": "2.0", 
             "id": QUERY_HEADSET_ID,
@@ -148,10 +162,10 @@ class ros2_reading_emotiv_insight(Node):
 
         self.headset_id = result_dic['result'][0]['id']
         if self.debug:
-            # print('query headset result', json.dumps(result_dic, indent=4))            
+            print('query headset result', json.dumps(result_dic, indent=4))            
             print(self.headset_id)
     def connect_headset(self):
-        print('connect headset --------------------------------')        
+        #print('connect headset --------------------------------')        
         connect_headset_request = {
             "jsonrpc": "2.0", 
             "id": CONNECT_HEADSET_ID,
@@ -169,7 +183,7 @@ class ros2_reading_emotiv_insight(Node):
         if self.debug:
             print('connect headset result', json.dumps(result_dic, indent=4))
     def request_access(self):
-        print('request access --------------------------------')
+        #print('request access --------------------------------')
         request_access_request = {
             "jsonrpc": "2.0", 
             "method": "requestAccess",
@@ -187,7 +201,7 @@ class ros2_reading_emotiv_insight(Node):
         if self.debug:
             print(json.dumps(result_dic, indent=4))
     def authorize(self):
-        print('authorize --------------------------------')
+        #print('authorize --------------------------------')
         authorize_request = {
             "jsonrpc": "2.0",
             "method": "authorize", 
@@ -215,7 +229,7 @@ class ros2_reading_emotiv_insight(Node):
                     self.auth = result_dic['result']['cortexToken']
                     break
     def create_session(self, auth, headset_id):
-        print('create session --------------------------------')
+        #print('create session --------------------------------')
         create_session_request = { 
             "jsonrpc": "2.0",
             "id": CREATE_SESSION_ID,
@@ -239,7 +253,7 @@ class ros2_reading_emotiv_insight(Node):
 
         self.session_id = result_dic['result']['id']
     def close_session(self):
-        print('close session --------------------------------')
+        #print('close session --------------------------------')
         close_session_request = { 
             "jsonrpc": "2.0",
             "id": CREATE_SESSION_ID,
@@ -258,7 +272,7 @@ class ros2_reading_emotiv_insight(Node):
         if self.debug:
             print('close session result \n', json.dumps(result_dic, indent=4))
     def get_cortex_info(self):
-        print('get cortex version --------------------------------')
+        #print('get cortex version --------------------------------')
         get_cortex_info_request = {
             "jsonrpc": "2.0",
             "method": "getCortexInfo",
@@ -276,7 +290,7 @@ class ros2_reading_emotiv_insight(Node):
         self.authorize()
         self.create_session(self.auth, self.headset_id)
     def disconnect_headset(self):
-        print('disconnect headset --------------------------------')
+        #print('disconnect headset --------------------------------')
         disconnect_headset_request = {
             "jsonrpc": "2.0", 
             "id": DISCONNECT_HEADSET_ID,
@@ -302,7 +316,7 @@ class ros2_reading_emotiv_insight(Node):
                 if result_dic['warning']['code'] == 1:
                     break
     def sub_request(self, stream):
-        print('subscribe request --------------------------------')
+        #print('subscribe request --------------------------------')
         sub_request_json = {
             "jsonrpc": "2.0", 
             "method": "subscribe", 
@@ -318,45 +332,53 @@ class ros2_reading_emotiv_insight(Node):
         
         if 'sys' in stream:
             new_data = self.ws.recv()
-            print(json.dumps(new_data, indent=4))
-            print('\n')
+            #print(json.dumps(new_data, indent=4))
+            #print('\n')
         else:
             while rclpy.ok():
+                ## For test
                 new_data = self.ws.recv()  
-                if new_data.find('eeg') > 0:
+                #print(new_data)
+
+                #############
+                if new_data.find('jsonrpc') > 0:
+                    pass
+
+                elif new_data.find('eeg') > 0:
                     #["COUNTER","INTERPOLATED","AF3","T7","Pz","T8","AF4","RAW_CQ","MARKER_HARDWARE","MARKERS"]
                     eeg_data = new_data[new_data.find('eeg":[')+6:new_data.find(',[]],"sid')-1]
                     eeg_data= np.fromstring(eeg_data, dtype=np.float32, sep=',') 
                     
                     #["COUNTER","INTERPOLATED","AF3","T7","Pz","T8","AF4","RAW_CQ"]
                     eeg_data = eeg_data[0:8]
-            
-                    if eeg_data[0:1] == 0:
-                        # start to make a chunk dataset
-                        self.bool_act_chunk = True
-                        eeg_data_chunk = eeg_data                        
-                    else:
-                        if self.bool_act_chunk == True:
-                            eeg_data_chunk = np.vstack((eeg_data_chunk, eeg_data))
-                            if len(eeg_data_chunk) > self.data_size:
-                                #print(eeg_data_chunk, len(eeg_data_chunk), type(eeg_data_chunk[0,0]))
-                                row_length = self.eeg_chuck_msg.layout.dim[0].size #128
-                                col_length = self.eeg_chuck_msg.layout.dim[1].size #8
-                                dstride1 = self.eeg_chuck_msg.layout.dim[1].stride #8
-                                for i in range(col_length):
-                                    for j in range(row_length):
-                                        self.eeg_chuck_msg_data[i*row_length + j] = eeg_data_chunk[i,j]
-                                self.eeg_chuck_msg.data = self.eeg_chuck_msg_data.tolist()
 
-                                self.pub_emotiv_insight_eeg_chuck.publish(self.eeg_chuck_msg)
-
-                                # Reset chunk data and type
-                                eeg_data_chunk = None
-                                self.bool_act_chunk = False
+                    if self.Parm_Chunk_Enable:
+                        if eeg_data[0:1] == 0:
+                            # start to make a chunk dataset
+                            self.bool_act_chunk_eeg = True
+                            eeg_data_chunk = eeg_data                        
                         else:
-                            pass
+                            if self.bool_act_chunk_eeg == True:
+                                eeg_data_chunk = np.vstack((eeg_data_chunk, eeg_data))
+                                if len(eeg_data_chunk) > self.data_size:
+                                    #print(eeg_data_chunk, len(eeg_data_chunk), type(eeg_data_chunk[0,0]))
+                                    row_length = self.eeg_chunk_msg.layout.dim[0].size #128
+                                    col_length = self.eeg_chunk_msg.layout.dim[1].size #8
+                                    dstride1 = self.eeg_chunk_msg.layout.dim[1].stride #8
+                                    for i in range(col_length):
+                                        for j in range(row_length):
+                                            self.eeg_chunk_msg_data[i*row_length + j] = eeg_data_chunk[i,j]
+                                    self.eeg_chunk_msg.data = self.eeg_chunk_msg_data.tolist()
 
-                    self.pub_emotiv_insight_eeg.publish(Float32MultiArray(data = eeg_data))
+                                    self.pub_emotiv_insight_eeg_chunk.publish(self.eeg_chunk_msg)
+
+                                    # Reset chunk data and type
+                                    eeg_data_chunk = None
+                                    self.bool_act_chunk_eeg = False
+                            else:
+                                pass
+
+                    self.pub_emotiv_insight_eeg.publish(Float32MultiArray(layout=self.eeg_dimension_layout, data = eeg_data))
 
                 elif new_data.find('mot') > 0:
                     #["COUNTER_MEMS","INTERPOLATED_MEMS","Q0","Q1","Q2","Q3","ACCX","ACCY","ACCZ","MAGX","MAGY","MAGZ"]
@@ -413,14 +435,17 @@ class ros2_reading_emotiv_insight(Node):
                     
                     #dev_data = ["Battery","Signal", "AF3_Signal","T7_Signal","Pz_Signal","T8_Signal","AF4_Signal","OVERALL_Signal","BatteryPercent"]
                     dev_data = [Battery, Signal, Pin_signal_AF3, Pin_signal_T7, Pin_signal_Pz, Pin_signal_T8, Pin_signal_AF4, Pin_signal_OVERALL, BatteryPercent]
+                    self.pow_dimension_layout
                     self.pub_emotiv_insight_dev.publish(Float32MultiArray(data =dev_data))
                     #dev_time_data = new_data[new_data.find('time":')+6:new_data.find('}')]
                 
                 elif new_data.find('pow') > 0:
                     pow_data = new_data[new_data.find('pow":[')+6:new_data.find(',"sid')-1]
                     pow_data= np.fromstring(pow_data, dtype=np.float32, sep=',')         
-                    #["AF3/theta","AF3/alpha","AF3/betaL","AF3/betaH","AF3/gamma","T7/theta","T7/alpha","T7/betaL","T7/betaH","T7/gamma","Pz/theta","Pz/alpha","Pz/betaL","Pz/betaH","Pz/gamma","T8/theta","T8/alpha","T8/betaL","T8/betaH","T8/gamma","AF4/theta","AF4/alpha","AF4/betaL","AF4/betaH","AF4/gamma"]                              
-                    self.pub_emotiv_insight_pow.publish(Float32MultiArray(data=pow_data))
+                    #["AF3/theta","AF3/alpha","AF3/betaL","AF3/betaH","AF3/gamma","T7/theta","T7/alpha","T7/betaL","T7/betaH","T7/gamma","Pz/theta","Pz/alpha","Pz/betaL","Pz/betaH","Pz/gamma","T8/theta","T8/alpha","T8/betaL","T8/betaH","T8/gamma","AF4/theta","AF4/alpha","AF4/betaL","AF4/betaH","AF4/gamma"]     
+
+                    
+                    self.pub_emotiv_insight_pow.publish(Float32MultiArray(layout=self.pow_dimension_layout, data=pow_data))
 
                     #pow_time_data = new_data[new_data.find('time":')+6:new_data.find('}')]
                 
@@ -429,6 +454,7 @@ class ros2_reading_emotiv_insight(Node):
                     #met_time_data = new_data[new_data.find('time":')+6:new_data.find('}')]
 
                     #["eng.isActive","eng","exc.isActive","exc","lex","str.isActive","str","rel.isActive","rel","int.isActive","int","foc.isActive","foc"]
+                    #print(met_data)
                     met_data = met_data.split(',')
                     Engagement_data = float(met_data[1])
                     Excitement_data = float(met_data[3])
@@ -444,11 +470,11 @@ class ros2_reading_emotiv_insight(Node):
                     # 1 means "high power". 
                     #Engagement_data, Excitement_data, Long_term_excitement_data, Stress_Frustration_data, Relaxation_data, Interest_Affinity_data, Focus_data
                     self.pub_emotiv_insight_met.publish(Float32MultiArray(data=met_data))
-             
+                
                 else:
                     print("Unknown Error")
     def query_profile(self):
-        print('query profile --------------------------------')
+        #print('query profile --------------------------------')
         query_profile_json = {
             "jsonrpc": "2.0",
             "method": "queryProfile",
@@ -480,7 +506,7 @@ class ros2_reading_emotiv_insight(Node):
 
         return profiles
     def setup_profile(self, profile_name, status):
-        print('setup profile --------------------------------')
+        #print('setup profile --------------------------------')
         setup_profile_json = {
             "jsonrpc": "2.0",
             "method": "setupProfile",
@@ -554,7 +580,7 @@ class ros2_reading_emotiv_insight(Node):
     def create_record(self,
                     record_name,
                     record_description):
-        print('create record --------------------------------')
+        #print('create record --------------------------------')
         create_record_request = {
             "jsonrpc": "2.0", 
             "method": "createRecord",
@@ -580,7 +606,7 @@ class ros2_reading_emotiv_insight(Node):
 
         self.record_id = result_dic['result']['record']['uuid']
     def stop_record(self):
-        print('stop record --------------------------------')
+        #print('stop record --------------------------------')
         stop_record_request = {
             "jsonrpc": "2.0", 
             "method": "stopRecord",
@@ -607,7 +633,7 @@ class ros2_reading_emotiv_insight(Node):
                     export_format,
                     export_version,
                     record_ids):
-        print('export record --------------------------------')
+        #print('export record --------------------------------')
         export_record_request = {
             "jsonrpc": "2.0",
             "id":EXPORT_RECORD_ID,
@@ -645,7 +671,7 @@ class ros2_reading_emotiv_insight(Node):
                 if len(result_dic['result']['success']) > 0:
                     break
     def inject_marker_request(self, marker):
-        print('inject marker --------------------------------')
+        #print('inject marker --------------------------------')
         inject_marker_request = {
             "jsonrpc": "2.0",
             "id": INJECT_MARKER_REQUEST_ID,
@@ -669,7 +695,7 @@ class ros2_reading_emotiv_insight(Node):
             print('inject marker result \n',
                 json.dumps(result_dic, indent=4))
     def get_mental_command_action_sensitivity(self, profile_name):
-        print('get mental command sensitivity ------------------')
+        #print('get mental command sensitivity ------------------')
         sensitivity_request = {
             "id": SENSITIVITY_REQUEST_ID,
             "jsonrpc": "2.0",
@@ -692,7 +718,7 @@ class ros2_reading_emotiv_insight(Node):
     def set_mental_command_action_sensitivity(self, 
                                             profile_name, 
                                             values):
-        print('set mental command sensitivity ------------------')
+        #print('set mental command sensitivity ------------------')
         sensitivity_request = {
                                 "id": SENSITIVITY_REQUEST_ID,
                                 "jsonrpc": "2.0",
@@ -715,7 +741,7 @@ class ros2_reading_emotiv_insight(Node):
 
         return result_dic
     def get_mental_command_active_action(self, profile_name):
-        print('get mental command active action ------------------')
+        #print('get mental command active action ------------------')
         command_active_request = {
             "id": MENTAL_COMMAND_ACTIVE_ACTION_ID,
             "jsonrpc": "2.0",
@@ -736,7 +762,7 @@ class ros2_reading_emotiv_insight(Node):
 
         return result_dic
     def get_mental_command_brain_map(self, profile_name):
-        print('get mental command brain map ------------------')
+        #print('get mental command brain map ------------------')
         brain_map_request = {
             "id": MENTAL_COMMAND_BRAIN_MAP_ID,
             "jsonrpc": "2.0",
@@ -757,7 +783,7 @@ class ros2_reading_emotiv_insight(Node):
 
         return result_dic
     def get_mental_command_training_threshold(self, profile_name):
-        print('get mental command training threshold -------------')
+        #print('get mental command training threshold -------------')
         training_threshold_request = {
             "id": MENTAL_COMMAND_TRAINING_THRESHOLD,
             "jsonrpc": "2.0",
@@ -778,11 +804,9 @@ class ros2_reading_emotiv_insight(Node):
         return result_dic
 
 
-
 def main(args=None):
     rclpy.init(args=args)
-    emotiv_insight_node = ros2_reading_emotiv_insight(user, debug_mode=True)
-
+    emotiv_insight_node = ros2_emotiv_insight(user, debug_mode=False)
     try:
         while rclpy.ok():
             rclpy.spin(emotiv_insight_node)
@@ -801,7 +825,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-
-# -------------------------------------------------------------------
-# -------------------------------------------------------------------
-# -------------------------------------------------------------------

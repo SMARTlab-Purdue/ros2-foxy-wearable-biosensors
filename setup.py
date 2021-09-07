@@ -23,7 +23,7 @@ setup(
     entry_points={
         'console_scripts': [
             #'Emotiv_Insight_Node = ros2-foxy-wearable-biosensors.emotiv_insight_node:main',
-            'Empatica_E4_Node = ros2-foxy-wearable-biosensors.empatica_e4.empatica_e4_node:main',
+            'ROS2_Empatica_E4_Node = ros2-foxy-wearable-biosensors.empatica_e4.empatica_e4_node:main',
         ],
     },
 )

@@ -1,5 +1,4 @@
-## This ROS2 node for reading Empatica E4 is developed based on the Manuel Olguín Muñoz's open-e4-client  (github: molguin92)
-## If you want to see more detail without ROS2, please visit his/her github; https://github.com/molguin92/open-e4-client
+## This ROS2 node for reading Empatica E4 is developed based on the Manuel Olguín Muñoz's open-e4-client  (github: molguin92). If you want to see more detail without ROS2, please visit his/her github; https://github.com/molguin92/open-e4-client
 
 #ROS2 Libs.
 import rclpy
@@ -22,7 +21,7 @@ import numpy as np
 
 class ros2_empatica_e4(Node):
     def __init__(self):
-        super().__init__('reading_empatica_e4_node')
+        super().__init__('empatica_e4_node')
 
         self.bvp_data_index = 0
         self.bvp_chunk_data = []

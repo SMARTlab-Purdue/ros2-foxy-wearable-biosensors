@@ -1,7 +1,3 @@
-# Zephyr Ros
-
-A repo for all Zephyr Ros integration code
-
 @@Add details
 
 How to install, such as pip install XXXXX, sudo apt install XXXX, or additional programs

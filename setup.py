@@ -3,10 +3,9 @@ from glob import glob
 from setuptools import setup
 
 package_name = 'ros2-foxy-wearable-biosensors'
-
 setup(
     name=package_name,
-    version='0.0.0',
+    version='0.0.1',
     packages=[package_name],
     data_files=[
         ('share/ament_index/resource_index/packages',
@@ -16,7 +15,7 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='heav101-pc1',
+    maintainer='purdue-ucsc',
     maintainer_email='wonsu0513@gmail.com',
     description='TODO: Package description',
     license='TODO: License declaration',
@@ -24,7 +23,7 @@ setup(
     entry_points={
         'console_scripts': [
             #'Emotiv_Insight_Node = ros2-foxy-wearable-biosensors.emotiv_insight_node:main',
-            #'Empatica_E4_Node = ros2-foxy-wearable-biosensors.empatica_e4_node:main',
+            'Empatica_E4_Node = ros2-foxy-wearable-biosensors.empatica_e4.empatica_e4_node:main',
         ],
     },
 )

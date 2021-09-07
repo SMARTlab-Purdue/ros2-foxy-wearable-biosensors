@@ -20,7 +20,7 @@ import sys
 import numpy as np
 
 
-class ros2_reading_empatica_e4(Node):
+class ros2_empatica_e4(Node):
     def __init__(self):
         super().__init__('reading_empatica_e4_node')
 
@@ -162,12 +162,11 @@ class ros2_reading_empatica_e4(Node):
             acc_data = [sample[0], sample[1], sample[2]]
             self.pub_empatic_e4_acc.publish(Float32MultiArray(data = acc_data))
             
-            # Need to find more details regarding the accelerometer for v0.0.2
+            # Need to find more details regarding the accelerometer, then we will update it on next v0.0.2
             #self.acc_imu_msg.header.frame_id = "empatica_e4"
             #self.acc_imu_msg.angular_velocity.x=sample[0]
             #self.acc_imu_msg.angular_velocity.y=sample[1]
             #self.acc_imu_msg.angular_velocity.z=sample[2]           
-
             #self.pub_empatic_e4_acc_imu.publish(self.acc_imu_msg)
 
         elif stream_id.name == "TAG":
@@ -182,7 +181,7 @@ class ros2_reading_empatica_e4(Node):
     
 def main(args=None):
     rclpy.init(args=args)
-    empatica_E4_node = ros2_reading_empatica_e4()
+    empatica_E4_node = ros2_empatica_e4()
     try:
         while rclpy.ok():
             rclpy.spin(empatica_E4_node)
@@ -197,7 +196,7 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-    empatica_E4_node = ros2_reading_empatica_e4()       
+    empatica_E4_node = ros2_empatica_e4()       
 
 
     

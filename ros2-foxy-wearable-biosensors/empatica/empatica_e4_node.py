@@ -54,9 +54,9 @@ class ros2_reading_empatica_e4(Node):
         self.pub_empatic_e4_gsr_chunck_avg = self.create_publisher(Float32, 'physiological_sensor/empatica_e4/gsr_chunk_avg', 10) 
 
         # Temperature data
-        self.pub_empatic_e4_temp = self.create_publisher(Float32, 'physiological_sensor/empatica_e4/temp', 10)         
-        self.pub_empatic_e4_temp_chunck = self.create_publisher(Float32MultiArray, 'physiological_sensor/empatica_e4/temp_chunk', 10) 
-        self.pub_empatic_e4_temp_chunck_avg = self.create_publisher(Float32, 'physiological_sensor/empatica_e4/temp_chunk_avg', 10) 
+        self.pub_empatic_e4_temp = self.create_publisher(Float32, 'physiological_sensor/empatica_e4/st', 10)         
+        self.pub_empatic_e4_temp_chunck = self.create_publisher(Float32MultiArray, 'physiological_sensor/empatica_e4/st_chunk', 10) 
+        self.pub_empatic_e4_temp_chunck_avg = self.create_publisher(Float32, 'physiological_sensor/empatica_e4/st_chunk_avg', 10) 
 
         # HR data
         self.pub_empatic_e4_hr = self.create_publisher(Float32, 'physiological_sensor/empatica_e4/hr', 10)        

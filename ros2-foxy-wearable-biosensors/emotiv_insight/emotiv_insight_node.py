@@ -79,7 +79,9 @@ class ros2_emotiv_insight(Node):
         self.user = user
         self.debug = debug_mode
 
-        self.data_size = self.Parm_Chunk_Length - 1
+        self.data_size_eeg_chunk = self.Parm_Chunk_Length - 1 # Sample rate: 1 Hz
+        self.data_size_pow_chunk = int((self.Parm_Chunk_Length - 1)/16) # Sample rate: 1 Hz
+
         self.bool_act_chunk_eeg = False
         self.bool_act_chunk_pow = False
 
@@ -100,17 +102,33 @@ class ros2_emotiv_insight(Node):
         self.eeg_chunk_msg.layout.dim.append(MultiArrayDimension())
         self.eeg_chunk_msg.layout.dim.append(MultiArrayDimension())
         self.eeg_chunk_msg.layout.dim[0].label = "['COUNTER','INTERPOLATED','AF3','T7','Pz','T8','AF4','RAW_CQ']"
-        self.eeg_chunk_msg.layout.dim[1].label = "Length" #data size 128 (default)
+        self.eeg_chunk_msg.layout.dim[1].label = "data length" #data size 128 (default)
 
         #"COUNTER","INTERPOLATED","AF3","T7","Pz","T8","AF4","RAW_CQ"
         self.eeg_chunk_msg.layout.dim[0].size = 8
-        self.eeg_chunk_msg.layout.dim[1].size = self.data_size+1
-        self.eeg_chunk_msg.layout.dim[0].stride = 8*(self.data_size+1)
+        self.eeg_chunk_msg.layout.dim[1].size = self.data_size_eeg_chunk+1
+        self.eeg_chunk_msg.layout.dim[0].stride = 8*(self.data_size_eeg_chunk+1)
         self.eeg_chunk_msg.layout.dim[1].stride = 8
         self.eeg_chunk_msg.layout.data_offset = 0
 
-        self.eeg_chunk_msg_data = np.zeros(8*(self.data_size + 1), dtype=np.float32)
+        self.eeg_chunk_msg_data = np.zeros(8*(self.data_size_eeg_chunk + 1), dtype=np.float32)
 
+
+        # let's build a matrix for pow Chunk:
+        self.pow_chunk_msg = Float32MultiArray()
+        self.pow_chunk_msg.layout.dim.append(MultiArrayDimension())
+        self.pow_chunk_msg.layout.dim.append(MultiArrayDimension())
+        self.pow_chunk_msg.layout.dim[0].label = "[AF3/theta, AF3/alpha, AF3/betaL, AF3/betaH, AF3/gamma, T7/theta, T7/alpha, T7/betaL, T7/betaH, T7/gamma, Pz/theta, Pz/alpha, Pz/betaL, Pz/betaH, Pz/gamma,T8/theta, T8/alpha, T8/betaL, T8/betaH, T8/gamma, AF4/theta, AF4/alpha, AF4/betaL, AF4/betaH, AF4/gamma]"
+        self.pow_chunk_msg.layout.dim[1].label = "data length" #data size 128 (default)
+
+        #"COUNTER","INTERPOLATED","AF3","T7","Pz","T8","AF4","RAW_CQ"
+        self.pow_chunk_msg.layout.dim[0].size = 25
+        self.pow_chunk_msg.layout.dim[1].size = self.data_size_pow_chunk+1
+        self.pow_chunk_msg.layout.dim[0].stride = 25*(self.data_size_pow_chunk+1)
+        self.pow_chunk_msg.layout.dim[1].stride = 25
+        self.pow_chunk_msg.layout.data_offset = 0
+
+        self.pow_chunk_msg_data = np.zeros(25*(self.data_size_pow_chunk + 1), dtype=np.float32)
 
         
         
@@ -130,6 +148,7 @@ class ros2_emotiv_insight(Node):
 
             if self.Parm_Chunk_Enable:
                 self.pub_emotiv_insight_eeg_chunk= self.create_publisher(Float32MultiArray, 'biosensors/emotiv_insight/eeg_chunk', 10) #The raw EEG data from the headset.
+                self.pub_emotiv_insight_pow_chunk= self.create_publisher(Float32MultiArray, 'biosensors/emotiv_insight/pow_chunk', 100) #The raw EEG data from the headset.
                 
 
             # Streaming data
@@ -360,7 +379,7 @@ class ros2_emotiv_insight(Node):
                         else:
                             if self.bool_act_chunk_eeg == True:
                                 eeg_data_chunk = np.vstack((eeg_data_chunk, eeg_data))
-                                if len(eeg_data_chunk) > self.data_size:
+                                if len(eeg_data_chunk) > self.data_size_eeg_chunk:
                                     #print(eeg_data_chunk, len(eeg_data_chunk), type(eeg_data_chunk[0,0]))
                                     row_length = self.eeg_chunk_msg.layout.dim[0].size #128
                                     col_length = self.eeg_chunk_msg.layout.dim[1].size #8
@@ -444,7 +463,37 @@ class ros2_emotiv_insight(Node):
                     pow_data= np.fromstring(pow_data, dtype=np.float32, sep=',')         
                     #["AF3/theta","AF3/alpha","AF3/betaL","AF3/betaH","AF3/gamma","T7/theta","T7/alpha","T7/betaL","T7/betaH","T7/gamma","Pz/theta","Pz/alpha","Pz/betaL","Pz/betaH","Pz/gamma","T8/theta","T8/alpha","T8/betaL","T8/betaH","T8/gamma","AF4/theta","AF4/alpha","AF4/betaL","AF4/betaH","AF4/gamma"]     
 
-                    
+                    #["COUNTER","INTERPOLATED","AF3","T7","Pz","T8","AF4","RAW_CQ"]
+                 
+                    if self.Parm_Chunk_Enable:
+                        if not self.bool_act_chunk_pow:
+                            # start to make a chunk dataset
+                            self.bool_act_chunk_pow = True
+                            pow_data_chunk = pow_data                        
+                        else:
+                            if self.bool_act_chunk_pow == True:
+                                pow_data_chunk = np.vstack((pow_data_chunk, pow_data))
+                                #print(len(pow_data_chunk),pow_data_chunk)
+                                if len(pow_data_chunk) > self.data_size_pow_chunk:
+                                    #print(pow_data_chunk, len(pow_data_chunk), type(pow_data_chunk[0,0]))
+                                    row_length = self.pow_chunk_msg.layout.dim[0].size 
+                                    col_length = self.pow_chunk_msg.layout.dim[1].size 
+                                    dstride1 = self.pow_chunk_msg.layout.dim[1].stride 
+                                    #print(row_length, col_length)
+                                    for i in range(col_length):
+                                        for j in range(row_length):
+                                            self.pow_chunk_msg_data[i*row_length + j] = pow_data_chunk[i,j]
+                                    self.pow_chunk_msg.data = self.pow_chunk_msg_data.tolist()
+
+                                    self.pub_emotiv_insight_pow_chunk.publish(self.pow_chunk_msg)
+
+                                    # Reset chunk data and type
+                                    pow_data_chunk = None
+                                    self.bool_act_chunk_pow = False
+                            else:
+                                pass
+
+
                     self.pub_emotiv_insight_pow.publish(Float32MultiArray(layout=self.pow_dimension_layout, data=pow_data))
 
                     #pow_time_data = new_data[new_data.find('time":')+6:new_data.find('}')]

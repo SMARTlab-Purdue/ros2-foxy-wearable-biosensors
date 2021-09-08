@@ -11,30 +11,20 @@ def generate_launch_description():
     # Subject Information
     Subject_Number = "P1"
 
-    ###### Run ros2bag
-    data_recording = ExecuteProcess(
-            cmd=['ros2', 'bag', 'record', '-a', '-o', Subject_Number],
-            #output='screen'
-        )
-
     
     ###### Physiological Sensor
-    ros2_foxy_empatica_e4_node = Node(
+    ros2_emotiv_insight_node = Node(
             package='ros2-foxy-wearable-biosensors', 
             #namespace='Subject_Number',
-            executable='Empatica_E4_Node',
-            name='empatica_e4_node',
+            executable='ROS2_Emotiv_Insight_Node',
+            name='emotiv_insight_node',
             #output='screen',
             parameters=[{'Sensor_Enable': True, 
             'Chunk_Enable': True,
-            'Chunk_Length': 128,
-            ### For sensor devices
-            'DeviceID': 'CC34CD',
-            'E4_Host_IP': '192.168.50.225',
-            'E4_Host_Port': 28000
+            'Chunk_Length': 128,            
             }] 
         )
   
     return LaunchDescription([
-        ros2_foxy_empatica_e4_node,        
+        ros2_emotiv_insight_node,        
     ])

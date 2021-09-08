@@ -22,7 +22,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            #'Emotiv_Insight_Node = ros2-foxy-wearable-biosensors.emotiv_insight_node:main',
+            'ROS2_Emotiv_Insight_Node = ros2-foxy-wearable-biosensors.emotiv_insight.emotiv_insight_node:main',
             'ROS2_Empatica_E4_Node = ros2-foxy-wearable-biosensors.empatica_e4.empatica_e4_node:main',
         ],
     },

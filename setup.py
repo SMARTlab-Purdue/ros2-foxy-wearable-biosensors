@@ -24,6 +24,7 @@ setup(
         'console_scripts': [
             'ROS2_Emotiv_Insight_Node = ros2-foxy-wearable-biosensors.emotiv_insight.emotiv_insight_node:main',
             'ROS2_Empatica_E4_Node = ros2-foxy-wearable-biosensors.empatica_e4.empatica_e4_node:main',
+            'ROS2_Vernier_Respiration_Belt_Node = ros2-foxy-wearable-biosensors.vernier_respiration_belt.vernier_respiration_belt_node:main',
         ],
     },
 )

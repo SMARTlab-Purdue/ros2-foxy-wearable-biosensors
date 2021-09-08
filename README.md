@@ -23,16 +23,9 @@ All of the contributors are with [SMART Lab](http://www.smart-laboratory.org/ind
 
 <table>
   <tr>
-
 <td align="center"><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html"><img src="https://github.com/SMARTlab-Purdue/SMARTmBOT/blob/main/media/people/Wonse_Jo.png" width="200px;" alt=""/><br />
           <sub><b><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html" title="personal_website">🌍Wonse Jo</b></sub></a><br />
 <sub><b>Purdue Univ.</b></sub></a><br />
-<sub><b><a href="mailto: jow@purdue.edu" title="contact">jow@purdue.edu</a></b></sub></a><br />
-</td>
-
-<td align="center"><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html"><img src="https://github.com/SMARTlab-Purdue/SMARTmBOT/blob/main/media/people/Wonse_Jo.png" width="200px;" alt=""/><br />
-          <sub><b><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html" title="personal_website">🌍Wonse Jo</b></sub></a><br />
-<sub><b>UCSC Univ.</b></sub></a><br />
 <sub><b><a href="mailto: jow@purdue.edu" title="contact">jow@purdue.edu</a></b></sub></a><br />
 </td>
 
@@ -42,19 +35,28 @@ All of the contributors are with [SMART Lab](http://www.smart-laboratory.org/ind
 <sub><b>Purdue Univ.</b></sub></a><br />
 <sub><b><a href="mailto: kim2592@purdue.edu" title="contact">kim2592@purdue.edu </a></b></sub></a><br />
 
+
 <td align="center"><a href="http://www.smart-laboratory.org/group/bcm.html"><img src="https://github.com/SMARTlab-Purdue/SMARTmBOT/blob/main/media/people/Byung-Cheol_Min.png" width="200px;" alt=""/><br />
   <sub><b><a href="http://www.smart-laboratory.org/group/bcm.html" title="personal_website">🌍Byung-Cheol Min</b></sub></a><br />
-<sub><b>UCSC Univ.</b></sub></a><br />
+<sub><b>Purdue Univ.</b></sub></a><br />
 <sub><b><a href="mailto: minb@purdue.edu" title="contact">minb@purdue.edu</a></b></sub></a><br />
+  </tr>
+</table>
+
+<table>
+  <tr>
+<td align="center"><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html"><img src="https://github.com/SMARTlab-Purdue/SMARTmBOT/blob/main/media/people/Wonse_Jo.png" width="200px;" alt=""/><br />
+          <sub><b><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html" title="personal_website">🌍Wonse Jo</b></sub></a><br />
+<sub><b>Purdue Univ.</b></sub></a><br />
+<sub><b><a href="mailto: jow@purdue.edu" title="contact">jow@purdue.edu</a></b></sub></a><br />
+</td>
 
 
 <td align="center"><a href="http://www.smart-laboratory.org/group/bcm.html"><img src="https://github.com/SMARTlab-Purdue/SMARTmBOT/blob/main/media/people/Byung-Cheol_Min.png" width="200px;" alt=""/><br />
   <sub><b><a href="http://www.smart-laboratory.org/group/bcm.html" title="personal_website">🌍Byung-Cheol Min</b></sub></a><br />
 <sub><b>Purdue Univ.</b></sub></a><br />
 <sub><b><a href="mailto: minb@purdue.edu" title="contact">minb@purdue.edu</a></b></sub></a><br />
-
   </tr>
-
 </table>
 
 # Acknowledgements

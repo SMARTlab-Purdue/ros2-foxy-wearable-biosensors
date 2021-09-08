@@ -195,7 +195,6 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-    empatica_E4_node = ros2_empatica_e4()       
 
 
     

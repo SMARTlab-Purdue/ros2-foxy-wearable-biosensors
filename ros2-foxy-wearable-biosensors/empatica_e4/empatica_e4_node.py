@@ -105,7 +105,6 @@ class ros2_empatica_e4(Node):
             self.pub_empatic_e4_bvp.publish(Float32(data = sample[0]))
             if self.Parm_Chunk_Enable:
                 self.bvp_chunk_data.append(sample[0])
-                #print(self.bvp_data_index, stream_id.name, timestamp, sample) #For test
                 if self.bvp_data_index  == self.Parm_Chunk_Length - 1:
                     # publish chunk
                     self.pub_empatic_e4_bvp_chunck.publish(Float32MultiArray(data = self.bvp_chunk_data))
@@ -119,14 +118,12 @@ class ros2_empatica_e4(Node):
 
                 
         elif stream_id.name == "GSR":
-            self.gsr_chunk_data.append(sample[0])
+            self.pub_empatic_e4_gsr.publish(Float32(data = sample[0]))
             #print(self.gsr_data_index, stream_id.name, timestamp, sample) #For test
             if self.Parm_Chunk_Enable:
-                if self.gsr_data_index  == 5:
-                    gsr_chunk_avg = np.mean(self.gsr_chunk_data, dtype=np.float64)
-                    self.pub_empatic_e4_gsr.publish(Float32(data = gsr_chunk_avg))
-                    if self.Parm_Chunk_Enable: # publish chunk
-                        self.pub_empatic_e4_gsr_chunck.publish(Float32MultiArray(data = self.gsr_chunk_data))
+                self.gsr_chunk_data.append(sample[0])
+                if self.gsr_data_index == self.Parm_Chunk_Length - 1:
+                    self.pub_empatic_e4_gsr_chunck.publish(Float32MultiArray(data = self.gsr_chunk_data))
                     
                     #Reset index and ref_array
                     self.gsr_chunk_data = []

@@ -503,23 +503,25 @@ class ros2_emotiv_insight(Node):
                     #met_time_data = new_data[new_data.find('time":')+6:new_data.find('}')]
 
                     #["eng.isActive","eng","exc.isActive","exc","lex","str.isActive","str","rel.isActive","rel","int.isActive","int","foc.isActive","foc"]
-                    #print(met_data)
+                    print(met_data, met_data[1], type(met_data[1]))
                     met_data = met_data.split(',')
-                    Engagement_data = float(met_data[1])
-                    Excitement_data = float(met_data[3])
-                    Long_term_excitement_data  = float(met_data[4])
-                    Stress_Frustration_data  = float(met_data[6])
-                    Relaxation_data  = float(met_data[8])
-                    Interest_Affinity_data  = float(met_data[10])
-                    Focus_data = float(met_data[12])
+                    if met_data[1] == "null":
+                        met_data = [0, 0, 0, 0, 0, 0, 0]
+                    else:                                            
+                        Engagement_data = float(met_data[1])
+                        Excitement_data = float(met_data[3])
+                        Long_term_excitement_data  = float(met_data[4])
+                        Stress_Frustration_data  = float(met_data[6])
+                        Relaxation_data  = float(met_data[8])
+                        Interest_Affinity_data  = float(met_data[10])
+                        Focus_data = float(met_data[12])
 
-                    met_data = [Engagement_data, Excitement_data, Long_term_excitement_data, Stress_Frustration_data, Relaxation_data, Interest_Affinity_data, Focus_data]
-                    # Decimal number between 0 and 1. 
-                    # Zero means "low power".
-                    # 1 means "high power". 
-                    #Engagement_data, Excitement_data, Long_term_excitement_data, Stress_Frustration_data, Relaxation_data, Interest_Affinity_data, Focus_data
+                        met_data = [Engagement_data, Excitement_data, Long_term_excitement_data, Stress_Frustration_data, Relaxation_data, Interest_Affinity_data, Focus_data]
+                        # Decimal number between 0 and 1. 
+                        # Zero means "low power".
+                        # 1 means "high power". 
+                        #Engagement_data, Excitement_data, Long_term_excitement_data, Stress_Frustration_data, Relaxation_data, Interest_Affinity_data, Focus_data
                     self.pub_emotiv_insight_met.publish(Float32MultiArray(data=met_data))
-                
                 else:
                     print("Unknown Error")
     def query_profile(self):

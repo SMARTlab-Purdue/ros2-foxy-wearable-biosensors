@@ -7,7 +7,7 @@ from rclpy.node import Node
 from std_msgs.msg import Float32, Float32MultiArray, Bool
 
 # For Godirect libs.
-from gdx import gdx
+from gdx import gdx   # should install godirect; $ pip3 install godirect
 # define information of Veriner sensors 
 
 class ros2_vernier_respiration_belt(Node):

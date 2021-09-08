@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import sys, struct, serial, os
 import rospy
 import time
@@ -14,7 +13,7 @@ def wait_for_ack():
     ack = struct.pack('B', 0xff)
     while ddata != ack:
         ddata = ser.read(1)
-        print "0x%02x" % ord(ddata[0])
+        print("0x%02x" % ord(ddata[0]))
         
     return
 
@@ -47,13 +46,13 @@ def talker(GSR_ohm, PPG_mv):
 if len(sys.argv) < 2:
     #print "no device specified"
     #print "You need to specify the serial port of the device you wish to connect to"
-    print "[Shimmer3] example:"
+    print("[Shimmer3] example:")
     #print "   aAccel5Hz.py Com12"
     #print "or"
-    print "[Shimmer3]    aAccel5Hz.py /dev/rfcomm0"   # To assign rfcoom0, "sudo rfcomm bind 0 <MAC address> <- 00:06:66:F2:AF:E9
-    print "[Shimmer3] sudo rfcomm bind 0 00:06:66:F2:AF:E9"
+    print("[Shimmer3]    aAccel5Hz.py /dev/rfcomm0")   # To assign rfcoom0, "sudo rfcomm bind 0 <MAC address> <- 00:06:66:F2:AF:E9
+    print("[Shimmer3] sudo rfcomm bind 0 00:06:66:F2:AF:E9")
 else:
-    print "[Shimmer3] connecting:"
+    print("[Shimmer3] connecting:")
     ser = serial.Serial(sys.argv[1], 115200)
     ser.flushInput()
     #print "port opening, done."
@@ -93,7 +92,7 @@ else:
 
     #print "Packet Type\tTimestamp\tGSR\tPPG"
     try:
-        print "[Shimmer3] connected:"
+        print("[Shimmer3] connected:")
         while True:
             while numbytes < framesize:
                 ddata += ser.read(framesize)
@@ -141,7 +140,7 @@ else:
 
     except KeyboardInterrupt:
 #send stop streaming command
-        print "[Shimmer3] error"
+        print("[Shimmer3] error")
 
         ser.write(struct.pack('B', 0x20))
         #print

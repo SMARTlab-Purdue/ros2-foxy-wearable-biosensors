@@ -66,6 +66,10 @@ class ros2_vernier_respiration_belt(Node):
                 arr_resp_belt_data = self.gdx.read()
                 self.pub_respiration_belt_data.publish(Float32MultiArray(data=arr_resp_belt_data))
 
+                #Force is a default channel that is active when the sensor is connected. The force channel measures respiration effort. This is the force exerted by the chest during respiration. Inhalation will be observed as an increase in force. Exhalation will be observed as a decrease in force.
+                #Respiration Rate is the other default channel that is active when the sensor is connected. This channel detects inhalations and calculates the number of breaths per minute (BPM). The sample window for the calculation is 30 seconds. The advance interval is 10 seconds. The value will update every 10 seconds.
+
+
                 self.pub_respiration_belt_force_data.publish(Float32(data=arr_resp_belt_data[0]))
                 self.pub_respiration_belt_bpm_data.publish(Float32(data=arr_resp_belt_data[1]))
 

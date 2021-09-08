@@ -3,15 +3,19 @@
 
 This paper proposes a new wearable biosensor package for ROS 2 system that is capable of lowering technology entry barrier and expanding the biosensor ecosystem in the robotics field. The wearable type of the biosensors has advantages to develop real-world human-robot interaction (HRI) system since there are no behavioral constraints compared to wired devices. Each biosensor nodes in the package follows a generalized node structure and topic information for user to easily utilize the package. Additionally, we validate the published data from each nodes by comparing to outcomes of reference programs that manufacturer of each biosensor officially provide to read data. Later, we propose one of potential HRI applications applied the proposed package.
 
-# Supported Biosensors
-1) d
-2) d
+# Supported Biosensors (v0.0.1 updated on Sep. 7th 2021)
+1) Empatica E4 wristband
+2) Emotiv Insight
+3) Shimmer3-GSR Unit+
+4) Polar H10
+5) Vernier Respiration Belt
+6) Zephyr Bioharness
 
 
 # Included Subjective Questionaires
 
 1) SAM UI
-2) NASA-TLX UI
+2) NASA-TLX UI 
 
 
 ## Contributors

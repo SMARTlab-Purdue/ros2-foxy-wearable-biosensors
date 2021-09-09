@@ -464,7 +464,7 @@ class ros2_emotiv_insight(Node):
                     #["AF3/theta","AF3/alpha","AF3/betaL","AF3/betaH","AF3/gamma","T7/theta","T7/alpha","T7/betaL","T7/betaH","T7/gamma","Pz/theta","Pz/alpha","Pz/betaL","Pz/betaH","Pz/gamma","T8/theta","T8/alpha","T8/betaL","T8/betaH","T8/gamma","AF4/theta","AF4/alpha","AF4/betaL","AF4/betaH","AF4/gamma"]     
 
                     #["COUNTER","INTERPOLATED","AF3","T7","Pz","T8","AF4","RAW_CQ"]
-                 
+
                     if self.Parm_Chunk_Enable:
                         if not self.bool_act_chunk_pow:
                             # start to make a chunk dataset

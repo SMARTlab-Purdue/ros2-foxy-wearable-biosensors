@@ -50,19 +50,21 @@ class ros2_vernier_respiration_belt(Node):
         #############################################################
         # Publisher Parts
         #############################################################
-        self.pub_respiration_belt_bpm_data = self.create_publisher(Float32, "biosensors/veriner_respiration_belt/bpm", 10) #raw Respiration Rate (bpm)
-        self.pub_respiration_belt_force_data = self.create_publisher(Float32, "biosensors/veriner_respiration_belt/force", 10) #raw Force (N)
-        
-        if self.Parm_Chunk_Enable:
-            self.pub_respiration_belt_bpm_chunk_data = self.create_publisher(Float32MultiArray, "biosensors/veriner_respiration_belt/bpm_chunk", 10) #chunk Respiration Rate (bpm)
-            self.pub_respiration_belt_force_chunk_data = self.create_publisher(Float32MultiArray, "biosensors/veriner_respiration_belt/force_chunk", 10) #chunk Force (N)
+        if self.Parm_Sensor_Enable:
+            self.gdx.start(self.Parm_Device_Sampling_Rate)  
 
+            self.pub_respiration_belt_bpm_data = self.create_publisher(Float32, "biosensors/veriner_respiration_belt/bpm", 10) #raw Respiration Rate (bpm)
+            self.pub_respiration_belt_force_data = self.create_publisher(Float32, "biosensors/veriner_respiration_belt/force", 10) #raw Force (N)
+        
+            if self.Parm_Chunk_Enable:
+                self.pub_respiration_belt_bpm_chunk_data = self.create_publisher(Float32MultiArray, "biosensors/veriner_respiration_belt/bpm_chunk", 10) #chunk Respiration Rate (bpm)
+                self.pub_respiration_belt_force_chunk_data = self.create_publisher(Float32MultiArray, "biosensors/veriner_respiration_belt/force_chunk", 10) #chunk Force (N)
+        
 	    #############################################################
         # ROS main loop
         #############################################################
         while rclpy.ok():
-            if self.Parm_Sensor_Enable:
-                self.gdx.start(self.Parm_Device_Sampling_Rate)                 
+            if self.Parm_Sensor_Enable:                             
                 arr_resp_belt_data = self.gdx.read()
                 self.pub_respiration_belt_data.publish(Float32MultiArray(data=arr_resp_belt_data))
 

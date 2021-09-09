@@ -12,11 +12,6 @@ This paper proposes a new wearable biosensor package for ROS 2 system that is ca
 6) Zephyr Bioharness
 
 
-# Included Subjective Questionaires
-
-1) SAM UI
-2) NASA-TLX UI 
-
 
 ## Contributors
 All of the contributors are with [SMART Lab](http://www.smart-laboratory.org/index.html), Department of Computer and Information Technology, Purdue University, West Lafayette, IN 47907, USA.<br />

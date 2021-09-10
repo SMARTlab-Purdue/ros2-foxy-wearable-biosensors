@@ -52,7 +52,7 @@ Robert Wilson, and Steve McGuire are with Department of Electrical and Computer 
 </td>
 
 
-<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://engineering.ucsc.edu/people/smcguire/photo/1" width="200px;" alt=""/><br />
+<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://engineering.ucsc.edu/people/smcguire/photo/1.jepg" width="200px;" alt=""/><br />
   <sub><b><a href="http://www.smart-laboratory.org/group/bcm.html" title="personal_website">🌍Dr. Steve McGuire</b></sub></a><br />
 <sub><b>Purdue Univ.</b></sub></a><br />
 <sub><b><a href="mailto: steve.mcguire@ucsc.edu" title="contact">steve.mcguire@ucsc.edu</a></b></sub></a><br />

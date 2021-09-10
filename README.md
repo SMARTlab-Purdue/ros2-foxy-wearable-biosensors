@@ -6,6 +6,20 @@
 
 Wearable biosensors enable continuous human data capture, facilitating development of real-world Human-Robot Inteaction (HRI) systems. However, a lack of standardized libraries and implementations add extraneous complexity to HRI system designs, and preclude collaboration across disciplines and institutions. Here, we propose a novel wearable biosensor package for the Robot Operating System 2 (ROS 2). The package standardizes biosensor HRI integration, lowers the technical barrier of entry, and expands the biosensor ecosystem in the robotics field. Each biosensor package node follows a generalized node and topic structure concentrated on ease of use. Current package capabilities, listed by biosensor, highlight package standardization. Collected example data demonstrates integration of each biosensor into ROS 2. Standardization of a biosensors package for ROS 2 will greatly simplify use and cross-collaboration across many disciplines.
 
+# Requirements
+* ROS2 foxy
+* pip install 
+
+# Installation
+```bash
+$ sudo apt install ros-foxy-desktop 
+$ source /opt/ros/foxy/setup.bash
+$ mkdir -p ~/ros2_ws/src
+$ cd ~/ros2_ws/src
+$ git clone https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors.git
+$ cd ~/ros2_ws
+$ colcon build --symlink-install
+```
 
 # Supported Biosensors (v0.0.1 updated on Sep. 7th 2021)
 1) [Empatica E4 wristband](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/empatica_e4)
@@ -15,7 +29,6 @@ Wearable biosensors enable continuous human data capture, facilitating developme
 5) [Vernier Respiration Belt](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/vernier_respiration_belt)
 6) [Zephyr Bioharness](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/zephyr-ros-master)
 7) TBD (will be added new sensors on v0.0.2)
-
 
 
 ## Contributors

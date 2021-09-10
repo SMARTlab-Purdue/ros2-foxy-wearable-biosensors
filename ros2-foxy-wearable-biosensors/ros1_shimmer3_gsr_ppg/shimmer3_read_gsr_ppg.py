@@ -3,7 +3,7 @@ import rospy
 import time
 from std_msgs.msg import String, Float64, Float32, Bool
 import subprocess
-
+###test slack
 os.system("sudo rfcomm bind 0 00:06:66:F2:AF:E9")
 
 sensor_status = False

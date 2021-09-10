@@ -3,8 +3,8 @@
 
 
 ## Requirments
-1) Emotiv Pro Liences
-2) Install Emotiv App
+1) [Emotiv Pro Liences](https://www.emotiv.com/emotivpro/)
+2) Install [Emotiv App (Ubuntu version)](https://www.emotiv.com/my-account/downloads/)
 
 
 ## Node Informations

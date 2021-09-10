@@ -42,7 +42,7 @@ Wonse Jo, Jaeeun Kim, and Dr. Byung-Cheol Min are with [SMART Lab](http://www.sm
 </table>
 
 
-Dr. Robert Wilson, and Dr. Steve McGuire are with Department of Electrical and Computer Engineering, [University of California Santa Cruz](https://www.ucsc.edu/), Santa Cruz, CA 95064, USA.<br />
+Dr. Robert Wilson, and Dr. Steve McGuire are with HARE Lab, Department of Electrical and Computer Engineering, [University of California Santa Cruz](https://www.ucsc.edu/), Santa Cruz, CA 95064, USA.<br />
 
 
 <table>

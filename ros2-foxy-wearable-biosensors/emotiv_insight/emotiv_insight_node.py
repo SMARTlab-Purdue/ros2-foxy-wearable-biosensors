@@ -49,12 +49,6 @@ user_details = {
 	"debit" : 100
 }
 
-user_details = {
-	"license" : "60060faf-4c7f-4306-9d52-8c9db73d82ae",
-	"client_id" : "uUR1sorcCJenNb168xSA5h3Cr1NDLztgpBBRUEv7",
-	"client_secret" : "w7O7fJ9gKvN5GJptiJY6vbo29RqMcAliC5g0pIDWTjKdA53kKtz8zuYEkKENaWZgY9dFAW6xH9jYMMDPxQ09qY4uwwQHeqyvaqgNLM1eu3wGz2OH7T81W8MzfySPvvIK",
-	"debit" : 100
-}
 
 
 user = user_details

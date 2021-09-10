@@ -1,11 +1,26 @@
-# Zephyr Ros
+## Emotiv Insight
+<img align="right" width="100" height="100" src="http://www.fillmurray.com/100/100">
 
-A repo for all Zephyr Ros integration code
 
-@@Add details
+## Requirments
+1) Emotiv Pro Liences
+2) Install Emotiv App
 
-How to install, such as pip install XXXXX, sudo apt install XXXX, or additional programs
 
-Topic name:
+## Node Informations
+1) Node name:
+2) Parameters:
 
-how to run this node:
+## Topic Information
+### Raw data
+1) d
+
+### Chunk Data
+1) d
+
+
+# How to run the Node using Launch file
+
+```bash
+$ros2 launch ros2-foxy-wearable-biosensors XXXXX
+```

@@ -5,12 +5,12 @@ Wearable biosensors enable continuous human data capture, facilitating developme
 
 
 # Supported Biosensors (v0.0.1 updated on Sep. 7th 2021)
-1) Empatica E4 wristband
-2) Emotiv Insight
-3) Shimmer3-GSR Unit+
-4) Polar H10
-5) Vernier Respiration Belt
-6) Zephyr Bioharness
+1) [Empatica E4 wristband](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/empatica_e4)
+2) [Emotiv Insight](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/emotiv_insight)
+3) [Shimmer3-GSR Unit+](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/ros1_shimmer3_gsr_ppg)
+4) [Polar H10](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/polar_h10)
+5) [Vernier Respiration Belt](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/vernier_respiration_belt)
+6) [Zephyr Bioharness](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/zephyr-ros-master)
 +) TBD (will be added new sensors on v0.0.2)
 
 

@@ -8,7 +8,12 @@ Wearable biosensors enable continuous human data capture, facilitating developme
 
 # Requirements
 * ROS2 foxy
-* pip3 install 
+* Install Emotiv App 
+* Install Emaptica E4 Bluetooth server on an additional Window machine
+* Install python liberies:
+```bash
+$ pip3 install open-e4-client pexpect websocket-client
+```
 
 # Installation
 ```bash

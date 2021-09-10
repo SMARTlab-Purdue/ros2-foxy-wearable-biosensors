@@ -1,6 +1,7 @@
 ## Empatica E4 Wristband
+The Empatica E4 is a wristband with an array of biosensors for physiological monitoring: Electrodermal Activity (EDA), Blood Volume Pulse (BVP), Inter-Beat-Interval (IBI), Heart Rate (HR), and Skin Temperature (ST), and behavioral monitoring: 3-axis accelerometer [14]. However, there are a limitation to directly read biosensor data on the Linux environment since the Empatica does not officially provides SDKs and libraries for Linux operating system. Thus, an additional Window machine and Bluetooth dongle (e.g., Bluegiga Bluetooth Smart Dongle) are required in the current version of the biosensor package in order to stream biosensor data using LSL as mentioned on the Empatica E4 website [15]. The main Linux machine having the ROS 2 system converts the LSL data into ROS 2 topics in real-time. The Empatica E4 node provides topics as depicted on Table I.
 
-<img align="right" width="250" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/empatica_e4.jpg">
+<img align="right" width="200" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/empatica_e4.jpg">
 
 
 ## Requirments

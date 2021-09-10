@@ -57,6 +57,12 @@ Dr. Robert Wilson, and Dr. Steve McGuire are with HARE Lab, Department of Electr
 
 <table>
   <tr>
+<td align="center"><a href="https://www.ucsc.edu/"><img src="http://www.smart-laboratory.org/group/Wonse_Jo.png" width="200px;" alt=""/><br />
+         </a><br />
+<sub><b>UCSC</b></sub></a><br />
+<sub><b> </b></sub></a><br />
+</td>
+
 <td align="center"><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html"><img src="http://www.smart-laboratory.org/group/Wonse_Jo.png" width="200px;" alt=""/><br />
           <sub><b><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html" title="personal_website">🌍Dr. Robert Wilson</b></sub></a><br />
 <sub><b>PostDoc. researcher</b></sub></a><br />
@@ -68,6 +74,8 @@ Dr. Robert Wilson, and Dr. Steve McGuire are with HARE Lab, Department of Electr
           <sub><b><a href="https://engineering.ucsc.edu/people/smcguire" title="personal_website">🌍Dr. Steve McGuire</b></sub></a><br />
 <sub><b>Director</b></sub></a><br />
 <sub><b><a href="mailto: steve.mcguire@ucsc.edu" title="contact">steve.mcguire@ucsc.edu</a></b></sub></a><br />
+</td>
+
   </tr>
 </table>
 

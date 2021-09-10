@@ -1,5 +1,5 @@
 ## Emotiv Insight
-<img align="right" width="100" height="100" src="http://www.fillmurray.com/100/100">
+<img align="right" width="500" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/Shimmer%20GSR%202_1.png">
 
 
 ## Requirments

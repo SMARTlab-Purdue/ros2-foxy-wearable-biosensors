@@ -1,6 +1,6 @@
 #  Generalized Wearable Biosensor Framework
 <p align="center">
-<img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/ros2_node_structure-1.jpg" width="700" >
+<img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/ros2_node_structure-1.jpg" width="500" >
 </p>
 
 Each package node follows a generalized structure as below figure. We categorized sensor data into three major types, using ROS 2 standard messages and separated per node. Hardware data indicates current battery levels and Bluetooth signal strength. Nodes publish raw data in real-time, with sampling rates based on the individual biosensor hardware specifications. 

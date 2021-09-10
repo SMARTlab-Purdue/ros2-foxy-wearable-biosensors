@@ -1,5 +1,5 @@
 ## Emotiv Insight
-<img align="right" width="100" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/emotiv-insight.jpg">
+<img align="right" width="300" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/emotiv-insight.jpg">
 
 
 ## Requirments

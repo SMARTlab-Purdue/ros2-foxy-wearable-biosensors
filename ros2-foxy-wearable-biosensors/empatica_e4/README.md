@@ -5,24 +5,26 @@ The Empatica E4 is a wristband with an array of biosensors for physiological mon
 
 ## Requirments
 1) Additional window machine to stream data via [E4 stremaing server](https://developer.empatica.com/windows-streaming-server-usage.html).
-2) Install a python library: ```bash
-$ pip install open-e4-client ```
+2) Install a python library: ```$ pip install open-e4-client```
 
 
 ## Node Informations
-1) Node name:
+1) Node name: empatica_e4_node
 2) Parameters: 
+  * _Sensor_Enable_ : a boolean data type (i.e., True or False).; default= _True_
+  * _Chunk_Enable_ : a boolean data type (i.e., True or False).; default= _False_
+  * _Chunk_Length_ : a integer data type to adjust data length per topic.; default= _10_
+  * _Device_Mac_Address_ : a string data type to connect own device via ble/; for example, _'xx:xx:xx:xx:xx:xx'_
 
 ## Topic Information
 ### Raw data
-1) d
+1) _biosensors/polar_h10/hr_ :
+2) _biosensors/polar_h10/ibi_ :
+3) _biosensors/polar_h10/dev_ :
 
-### Chunk Data
-1) d
 
-
-# How to run the Node using Launch file
+## How to run the Node using Launch file
 
 ```bash
-$ros2 launch ros2-foxy-wearable-biosensors XXXXX
+$ros2 launch ros2-foxy-wearable-biosensors ros2-polar_h10.launch.py
 ```

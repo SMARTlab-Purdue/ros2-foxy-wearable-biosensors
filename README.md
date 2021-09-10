@@ -11,7 +11,7 @@ Wearable biosensors enable continuous human data capture, facilitating developme
 4) [Polar H10](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/polar_h10)
 5) [Vernier Respiration Belt](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/vernier_respiration_belt)
 6) [Zephyr Bioharness](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/zephyr-ros-master)
-+) TBD (will be added new sensors on v0.0.2)
+7) TBD (will be added new sensors on v0.0.2)
 
 
 

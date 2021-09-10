@@ -4,8 +4,9 @@ The Empatica E4 is a wristband with an array of biosensors for physiological mon
 
 
 ## Requirments
-1) Additional window machine as data streaming server
-2) Install Emotiv App
+1) Additional window machine to stream data via [E4 stremaing server](https://developer.empatica.com/windows-streaming-server-usage.html).
+2) Install a python library: ```bash
+$ pip install open-e4-client ```
 
 
 ## Node Informations

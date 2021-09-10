@@ -36,7 +36,7 @@ Wonse Jo, Jaeeun Kim, and Dr. Byung-Cheol Min are with [SMART Lab](http://www.sm
 
 <table>
   <tr>
-<td align="center"><a href="https://www.purdue.edu/"><img src="http://www.smart-laboratory.org/group/Wonse_Jo.png" width="200px;" alt=""/><br />
+<td align="center"><a href="https://www.purdue.edu/"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/61/Purdue_University_seal.svg/150px-Purdue_University_seal.svg.png" width="200px;" alt=""/><br />
          </a><br />
 <sub><b>Purdue Univ.</b></sub></a><br />
 <sub><b> </b></sub></a><br />
@@ -73,10 +73,37 @@ Dr. Robert Wilson, and Dr. Steve McGuire are with HARE Lab, Department of Electr
 
 <table>
   <tr>
-<td align="center"><a href="https://www.ucsc.edu/"><img src="http://www.smart-laboratory.org/group/Wonse_Jo.png" width="200px;" alt=""/><br />
+<td align="center"><a href="https://www.ucsc.edu/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/The_University_of_California_1868_UCSC.svg/150px-The_University_of_California_1868_UCSC.svg.png" width="200px;" alt=""/><br />
          </a><br />
-<sub><b>UCSC</b></sub></a><br />
-<sub><b> </b></sub></a><br />
+<sub><b></b></sub></a><br />
+<sub><b></b></sub></a><br />
+</td>
+
+<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/contributors/Dr_Steve%20McGuire.jpeg" width="200px;" alt=""/><br />
+          <sub><b><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html" title="personal_website">🌍Dr. Robert Wilson</b></sub></a><br />
+<sub><b>PostDoc. researcher</b></sub></a><br />
+<sub><b><a href="mailto: jow@purdue.edu" title="contact">jow@purdue.edu</a></b></sub></a><br />
+</td>
+
+
+<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/contributors/Dr_Steve%20McGuire.jpeg" width="200px;" alt=""/><br />
+          <sub><b><a href="https://engineering.ucsc.edu/people/smcguire" title="personal_website">🌍Dr. Steve McGuire</b></sub></a><br />
+<sub><b>Director</b></sub></a><br />
+<sub><b><a href="mailto: steve.mcguire@ucsc.edu" title="contact">steve.mcguire@ucsc.edu</a></b></sub></a><br />
+</td>
+
+  </tr>
+</table>
+
+(TBD) We are looking for new contributors to expand the biosensor ecosystem on ROS 2 environment. Please contact us if you are interested.
+
+
+<table>
+  <tr>
+<td align="center"><a href="https://www.ucsc.edu/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/The_University_of_California_1868_UCSC.svg/150px-The_University_of_California_1868_UCSC.svg.png" width="200px;" alt=""/><br />
+         </a><br />
+<sub><b></b></sub></a><br />
+<sub><b></b></sub></a><br />
 </td>
 
 <td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/contributors/Dr_Steve%20McGuire.jpeg" width="200px;" alt=""/><br />

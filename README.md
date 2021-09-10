@@ -19,12 +19,7 @@ Wonse Jo, Jaeeun Kim, and Dr. Byung-Cheol Min are with [SMART Lab](http://www.sm
 
 <table>
   <tr>
-    <td align="center"><a href="https://www.purdue.edu/"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/Wonse_Jo.png" width="200px;" alt=""/><br />
-          <sub><b><a href="https://www.purdue.edu/" title="personal_website">Purdue Univ.</b></sub></a><br />
-</td>
-
-
-    <td align="center"><a href="https://wonsu0513.github.io/"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/Wonse_Jo.png" width="200px;" alt=""/><br />
+      <td align="center"><a href="https://wonsu0513.github.io/"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/Wonse_Jo.png" width="200px;" alt=""/><br />
           <sub><b><a href="https://wonsu0513.github.io/" title="personal_website">🌍Wonse Jo</b></sub></a><br />
 <sub><b>Ph.D. Candidate</b></sub></a><br />
 <sub><b><a href="mailto: jow@purdue.edu" title="contact">jow@purdue.edu</a></b></sub></a><br />
@@ -46,7 +41,7 @@ Wonse Jo, Jaeeun Kim, and Dr. Byung-Cheol Min are with [SMART Lab](http://www.sm
 </table>
 
 
-Dr. Robert Wilson, and Dr. Steve McGuire are with Department of Electrical and Computer Engineering, University of California Santa Cruz, Santa Cruz, CA 95064, USA.<br />
+Dr. Robert Wilson, and Dr. Steve McGuire are with Department of Electrical and Computer Engineering, [University of California Santa Cruz](https://www.ucsc.edu/), Santa Cruz, CA 95064, USA.<br />
 
 
 <table>

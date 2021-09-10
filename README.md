@@ -8,7 +8,7 @@ Wearable biosensors enable continuous human data capture, facilitating developme
 
 # Requirements
 * ROS2 foxy
-* pip install 
+* pip3 install 
 
 # Installation
 ```bash

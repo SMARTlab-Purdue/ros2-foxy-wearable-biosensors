@@ -53,7 +53,7 @@ Dr. Robert Wilson, and Dr. Steve McGuire are with Department of Electrical and C
 
 
 <td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/Dr_Steve%20McGuire.jpeg" width="200px;" alt=""/><br />
-  <sub><b><a href="hhttps://engineering.ucsc.edu/people/smcguire" title="personal_website">🌍Dr. Steve McGuire</b></sub></a><br />
+          <sub><b><a href="https://engineering.ucsc.edu/people/smcguire" title="personal_website">🌍Dr. Steve McGuire</b></sub></a><br />
 <sub><b>Director</b></sub></a><br />
 <sub><b><a href="mailto: steve.mcguire@ucsc.edu" title="contact">steve.mcguire@ucsc.edu</a></b></sub></a><br />
   </tr>

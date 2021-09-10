@@ -16,8 +16,7 @@ In each sensor node, there are three ROS 2 parameters (_Chuck_Enable_, _Chunk_Le
 
 # ROS2 Topics
 Available topics depend on the individual biosensor hardware specifications. All package topic names follow the following format:
-<p align="center">
-_**/biosensors/<sensor_name>/<data_name>
-**_</p>
+
+_**/biosensors/<sensor_name>/<data_name>**_
 
 where the _biosensor_name_ is the official name of the targeted biosensors (e.g., _empatica_e4_)and _data_name_ is the biosignal type (e.g., _PPG_raw_ and _PPG_chunk_).

@@ -17,7 +17,7 @@ In each sensor node, there are three ROS 2 parameters (_Chuck_Enable_, _Chunk_Le
 # ROS2 Topics
 Available topics depend on the individual biosensor hardware specifications. All package topic names follow the following format:
 <p align="center">
-```python
+```bash
 /biosensors/<sensor_name>/<data_name>
 ```
 </p>

@@ -11,7 +11,7 @@ In each sensor node, there are three ROS 2 parameters: _Chuck_Enable_, _Chunk_Le
 
 * _Sensor_Enable_ : a boolean data type (i.e., _True_ or _False_).
 * _Chuck_Enable_ : a boolean data type (i.e., _True_ or _False_).
-* _Chunk_Length_ : a float data type to adjust data length per topic. 
+* _Chunk_Length_ : a integer data type to adjust data length per topic. 
 
 
 # Generalized ROS2 Topics

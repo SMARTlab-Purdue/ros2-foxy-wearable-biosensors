@@ -7,11 +7,11 @@ Each package node follows a generalized structure as below figure. We categorize
 Chunk data, collected per node with predefined lengths, provide end-users with a framework for downstream processing (e.g., feature engineering and \ac{ML} applications). 
 
 # ROS2 Parameters
-In each sensor node, there are three ROS 2 parameters (_Chuck_Enable_, _Chunk_Length_, _Sensor_Enable_).
+In each sensor node, there are three ROS 2 parameters: _Chuck_Enable_, _Chunk_Length_, _Sensor_Enable_.
 
-1) _Sensor_Enable_:a boolean data type (i.e., _True_ or _False_).
-2) _Chuck_Enable_: a boolean data type (i.e., _True_ or _False_).
-3) _Chunk_Length_: a float data type to adjust data length per topic. 
+1) _Sensor_Enable_ : a boolean data type (i.e., _True_ or _False_).
+2) _Chuck_Enable_ : a boolean data type (i.e., _True_ or _False_).
+3) _Chunk_Length_ : a float data type to adjust data length per topic. 
 
 
 # ROS2 Topics

@@ -19,6 +19,6 @@
 
 # How to run the Node using Launch file
 
-'''
+```bash
 $ros2 launch ros2-foxy-wearable-biosensors XXXXX
-'''
+```

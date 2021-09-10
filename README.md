@@ -8,8 +8,8 @@ Wearable biosensors enable continuous human data capture, facilitating developme
 
 # Requirements
 * ROS2 foxy
-* Install [Emotiv App]{https://www.emotiv.com/my-account/downloads/}
-* Install [Emaptica E4 streaming server]{https://developer.empatica.com/windows-streaming-server-usage.html} on an additional Window machine
+* Install [Emotiv App](https://www.emotiv.com/my-account/downloads/)
+* Install [Emaptica E4 streaming server](https://developer.empatica.com/windows-streaming-server-usage.html) on an additional Window machine (Win10)
 * Install python liberies:
 ```bash
 $ pip3 install open-e4-client pexpect websocket-client

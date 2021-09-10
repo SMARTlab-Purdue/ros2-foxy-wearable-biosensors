@@ -96,7 +96,7 @@ Dr. Robert Wilson, and Dr. Steve McGuire are with HARE Lab, Department of Electr
 </table>
 
 # Acknowledgements
-<img align="right" width="250" src="https://user-images.githubusercontent.com/31596980/132916706-0a88c07a-1624-4bd1-bb1d-0da9c2930feb.png">
-<img align="right" width="250" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/NSF_logo.png/220px-NSF_logo.png">
+<img align="right" height="200" src="https://user-images.githubusercontent.com/31596980/132916706-0a88c07a-1624-4bd1-bb1d-0da9c2930feb.png">
+<img align="right" height="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/NSF_logo.png/220px-NSF_logo.png">
 
 This material is based upon work supported by the National Science Foundation under Grant No. IIS-1846221 and by DARPA under grant HR0011-18-2-0043. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation or DARPA.

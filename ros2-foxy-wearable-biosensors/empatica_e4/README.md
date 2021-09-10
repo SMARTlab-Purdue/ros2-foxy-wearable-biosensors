@@ -1,6 +1,6 @@
 ## Empatica E4 Wristband
 
-<img align="right" width="300" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/empatica_e4.jpg">
+<img align="right" width="250" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/empatica_e4.jpg">
 
 
 ## Requirments

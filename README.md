@@ -20,6 +20,13 @@ Wonse Jo, Jaeeun Kim, and Dr. Byung-Cheol Min are with [SMART Lab](http://www.sm
 
 <table>
   <tr>
+    <td align="center"><a href="https://wonsu0513.github.io/"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/Wonse_Jo.png" width="200px;" alt=""/><br />
+          <sub><b><a href="https://wonsu0513.github.io/" title="personal_website">🌍Wonse Jo</b></sub></a><br />
+<sub><b>Ph.D. Candidate</b></sub></a><br />
+<sub><b><a href="mailto: jow@purdue.edu" title="contact">jow@purdue.edu</a></b></sub></a><br />
+</td>
+
+
 <td align="center"><a href="https://wonsu0513.github.io/"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/Wonse_Jo.png" width="200px;" alt=""/><br />
           <sub><b><a href="https://wonsu0513.github.io/" title="personal_website">🌍Wonse Jo</b></sub></a><br />
 <sub><b>Ph.D. Candidate</b></sub></a><br />

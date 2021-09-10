@@ -75,8 +75,8 @@ Dr. Robert Wilson, and Dr. Steve McGuire are with HARE Lab, Department of Electr
   <tr>
 <td align="center"><a href="https://www.ucsc.edu/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/The_University_of_California_1868_UCSC.svg/150px-The_University_of_California_1868_UCSC.svg.png" width="100px;" alt=""/><br />
          </a><br />
-<sub><b></b>University of California,</sub></a><br />
-<sub><b></b>Santa Cruz</sub></a><br />
+<sub><b>University of California,</b></sub></a><br />
+<sub><b> Santa Cruz</b></sub></a><br />
 </td>
 
 <td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/contributors/Dr_Steve%20McGuire.jpeg" width="150px;" alt=""/><br />
@@ -100,7 +100,7 @@ Dr. Robert Wilson, and Dr. Steve McGuire are with HARE Lab, Department of Electr
 
 <table>
   <tr>
-<td align="center"><a href="https://www.ucsc.edu/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/WindowsUpdate.svg/800px-WindowsUpdate.svg.png" width="100px;" alt=""/><br />
+<td align="center"><a href="https://www.ucsc.edu/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/WindowsUpdate.svg/800px-WindowsUpdate.svg.png" width="150px;" alt=""/><br />
          </a><br />
 <sub><b></b></sub></a><br />
 <sub><b></b></sub></a><br />
@@ -108,14 +108,14 @@ Dr. Robert Wilson, and Dr. Steve McGuire are with HARE Lab, Department of Electr
 
 <td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/WindowsUpdate.svg/800px-WindowsUpdate.svg.png" width="150px;" alt=""/><br />
           <sub><b><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html" title="personal_website">🌍TBD</b></sub></a><br />
-<sub><b>PostDoc. researcher</b></sub></a><br />
+<sub><b>(TBD)position</b></sub></a><br />
 <sub><b><a href="mailto: TBD@TBD.COM" title="contact">TBD@TBD.COM</a></b></sub></a><br />
 </td>
 
 
 <td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/WindowsUpdate.svg/800px-WindowsUpdate.svg.png" width="150px;" alt=""/><br />
           <sub><b><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html" title="personal_website">🌍TBD</b></sub></a><br />
-<sub><b>Director</b></sub></a><br />
+<sub><b>(TBD)position</b></sub></a><br />
 <sub><b><a href="mailto:TBD@TBD.COM" title="contact">TBD@TBD.COM</a></b></sub></a><br />
 </td>
 

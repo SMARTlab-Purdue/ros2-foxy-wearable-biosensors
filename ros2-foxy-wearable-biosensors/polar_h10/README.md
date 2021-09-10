@@ -1,5 +1,6 @@
-## Emotiv Insight
-<img align="right" width="100" height="100" src="http://www.fillmurray.com/100/100">
+## Polar H10
+
+<img align="right" width="250" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/Polar-H10.jpg">
 
 
 ## Requirments

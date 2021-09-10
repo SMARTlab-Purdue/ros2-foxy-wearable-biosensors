@@ -1,9 +1,9 @@
-## Emotiv Insight
-<img align="right" width="100" height="100" src="http://www.fillmurray.com/100/100">
+## Empatica E4 Wristband
+<img align="right" width="300" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/empatica_e4.jpg>
 
 
 ## Requirments
-1) Emotiv Pro Liences
+1) Additional window machine as data streaming server
 2) Install Emotiv App
 
 

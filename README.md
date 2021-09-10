@@ -15,15 +15,21 @@ This paper proposes a new wearable biosensor package for ROS 2 system that is ca
 
 
 ## Contributors
-Wonse Jo, Jaeeun Kim, and Dr. Byung-Cheol Min are with [SMART Lab](http://www.smart-laboratory.org/index.html), Department of Computer and Information Technology, Purdue University, West Lafayette, IN 47907, USA.<br />
+Wonse Jo, Jaeeun Kim, and Dr. Byung-Cheol Min are with [SMART Lab](http://www.smart-laboratory.org/index.html), Department of Computer and Information Technology, [Purdue University](https://www.purdue.edu/), West Lafayette, IN 47907, USA.<br />
 
 <table>
   <tr>
-<td align="center"><a href="https://wonsu0513.github.io/"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/Wonse_Jo.png" width="200px;" alt=""/><br />
+    <td align="center"><a href="https://www.purdue.edu/"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/Wonse_Jo.png" width="200px;" alt=""/><br />
+          <sub><b><a href="https://www.purdue.edu/" title="personal_website">Purdue Univ.</b></sub></a><br />
+</td>
+
+
+    <td align="center"><a href="https://wonsu0513.github.io/"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/Wonse_Jo.png" width="200px;" alt=""/><br />
           <sub><b><a href="https://wonsu0513.github.io/" title="personal_website">🌍Wonse Jo</b></sub></a><br />
 <sub><b>Ph.D. Candidate</b></sub></a><br />
 <sub><b><a href="mailto: jow@purdue.edu" title="contact">jow@purdue.edu</a></b></sub></a><br />
 </td>
+
 
 
 <td align="center"><a href="http://www.smart-laboratory.org/group/Jaeeun_Kim.html"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/Jaeeun_Kim.jpg" width="200px;" alt=""/><br />

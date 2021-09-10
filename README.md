@@ -1,7 +1,8 @@
 # ros2-foxy-wearable-biosensors
+![GitHub markdown](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/ros2_biosensor_pkg.png)
 
+Wearable biosensors enable continuous human data capture, facilitating development of real-world Human-Robot Inteaction (HRI) systems. However, a lack of standardized libraries and implementations add extraneous complexity to HRI system designs, and preclude collaboration across disciplines and institutions. Here, we propose a novel wearable biosensor package for the Robot Operating System 2 (ROS 2). The package standardizes biosensor HRI integration, lowers the technical barrier of entry, and expands the biosensor ecosystem in the robotics field. Each biosensor package node follows a generalized node and topic structure concentrated on ease of use. Current package capabilities, listed by biosensor, highlight package standardization. Collected example data demonstrates integration of each biosensor into ROS 2. Standardization of a biosensors package for ROS 2 will greatly simplify use and cross-collaboration across many disciplines.
 
-This paper proposes a new wearable biosensor package for ROS 2 system that is capable of lowering technology entry barrier and expanding the biosensor ecosystem in the robotics field. The wearable type of the biosensors has advantages to develop real-world human-robot interaction (HRI) system since there are no behavioral constraints compared to wired devices. Each biosensor nodes in the package follows a generalized node structure and topic information for user to easily utilize the package. Additionally, we validate the published data from each nodes by comparing to outcomes of reference programs that manufacturer of each biosensor officially provide to read data. Later, we propose one of potential HRI applications applied the proposed package.
 
 # Supported Biosensors (v0.0.1 updated on Sep. 7th 2021)
 1) Empatica E4 wristband
@@ -10,7 +11,7 @@ This paper proposes a new wearable biosensor package for ROS 2 system that is ca
 4) Polar H10
 5) Vernier Respiration Belt
 6) Zephyr Bioharness
-7) TBD (will be added new sensors on v0.0.2)
++) TBD (will be added new sensors on v0.0.2)
 
 
 

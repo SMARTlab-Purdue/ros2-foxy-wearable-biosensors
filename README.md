@@ -43,7 +43,7 @@ Wonse Jo, Jaeeun Kim, and Dr. Byung-Cheol Min are with [SMART Lab](http://www.sm
 </td>
 
 
-<td align="center"><a href="https://wonsu0513.github.io/"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/contributors/Wonse_Jo.png" width="100px;" alt=""/><br />
+<td align="center"><a href="https://wonsu0513.github.io/"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/contributors/Wonse_Jo.png" width="150px;" alt=""/><br />
           <sub><b><a href="https://wonsu0513.github.io/" title="personal_website">🌍Wonse Jo</b></sub></a><br />
 <sub><b>Ph.D. Candidate</b></sub></a><br />
 <sub><b><a href="mailto: jow@purdue.edu" title="contact">jow@purdue.edu</a></b></sub></a><br />
@@ -51,14 +51,14 @@ Wonse Jo, Jaeeun Kim, and Dr. Byung-Cheol Min are with [SMART Lab](http://www.sm
 
 
 
-<td align="center"><a href="http://www.smart-laboratory.org/group/Jaeeun_Kim.html"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/contributors/Jaeeun_Kim.jpg" width="100px;" alt=""/><br />
+<td align="center"><a href="http://www.smart-laboratory.org/group/Jaeeun_Kim.html"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/contributors/Jaeeun_Kim.jpg" width="150px;" alt=""/><br />
               <sub><b><a href="http://www.smart-laboratory.org/group/Jaeeun_Kim.html" title="personal_website">🌍Jaeeun Kim</b></sub></a><br />
 <sub><b>Undergradute</b></sub></a><br />
 <sub><b><a href="mailto: kim2592@purdue.edu" title="contact">kim2592@purdue.edu </a></b></sub></a><br />
 </td>
 
 
-<td align="center"><a href="http://www.smart-laboratory.org/group/bcm.html"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/contributors/Dr_Byung-Cheol_Min.png" width="100px;" alt=""/><br />
+<td align="center"><a href="http://www.smart-laboratory.org/group/bcm.html"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/contributors/Dr_Byung-Cheol_Min.png" width="150px;" alt=""/><br />
   <sub><b><a href="http://www.smart-laboratory.org/group/bcm.html" title="personal_website">🌍Dr. Byung-Cheol Min</b></sub></a><br />
 <sub><b>Director</b></sub></a><br />
 <sub><b><a href="mailto: minb@purdue.edu" title="contact">minb@purdue.edu</a></b></sub></a><br />
@@ -79,14 +79,14 @@ Dr. Robert Wilson, and Dr. Steve McGuire are with HARE Lab, Department of Electr
 <sub><b></b>Santa Cruz</sub></a><br />
 </td>
 
-<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/contributors/Dr_Steve%20McGuire.jpeg" width="100px;" alt=""/><br />
+<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/contributors/Dr_Steve%20McGuire.jpeg" width="150px;" alt=""/><br />
           <sub><b><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html" title="personal_website">🌍Dr. Robert Wilson</b></sub></a><br />
 <sub><b>PostDoc. researcher</b></sub></a><br />
 <sub><b><a href="mailto: jow@purdue.edu" title="contact">jow@purdue.edu</a></b></sub></a><br />
 </td>
 
 
-<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/contributors/Dr_Steve%20McGuire.jpeg" width="100px;" alt=""/><br />
+<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/contributors/Dr_Steve%20McGuire.jpeg" width="150px;" alt=""/><br />
           <sub><b><a href="https://engineering.ucsc.edu/people/smcguire" title="personal_website">🌍Dr. Steve McGuire</b></sub></a><br />
 <sub><b>Director</b></sub></a><br />
 <sub><b><a href="mailto: steve.mcguire@ucsc.edu" title="contact">steve.mcguire@ucsc.edu</a></b></sub></a><br />
@@ -106,25 +106,20 @@ Dr. Robert Wilson, and Dr. Steve McGuire are with HARE Lab, Department of Electr
 <sub><b></b></sub></a><br />
 </td>
 
-<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/WindowsUpdate.svg/800px-WindowsUpdate.svg.png" width="100px;" alt=""/><br />
+<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/WindowsUpdate.svg/800px-WindowsUpdate.svg.png" width="150px;" alt=""/><br />
           <sub><b><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html" title="personal_website">🌍TBD</b></sub></a><br />
 <sub><b>PostDoc. researcher</b></sub></a><br />
 <sub><b><a href="mailto: TBD@TBD.COM" title="contact">TBD@TBD.COM</a></b></sub></a><br />
 </td>
 
 
-<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/WindowsUpdate.svg/800px-WindowsUpdate.svg.png" width="100px;" alt=""/><br />
+<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/WindowsUpdate.svg/800px-WindowsUpdate.svg.png" width="150px;" alt=""/><br />
           <sub><b><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html" title="personal_website">🌍TBD</b></sub></a><br />
 <sub><b>Director</b></sub></a><br />
 <sub><b><a href="mailto:TBD@TBD.COM" title="contact">TBD@TBD.COM</a></b></sub></a><br />
 </td>
 
-<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/WindowsUpdate.svg/800px-WindowsUpdate.svg.png" width="100px;" alt=""/><br />
-          <sub><b><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html" title="personal_website">🌍TBD</b></sub></a><br />
-<sub><b>Director</b></sub></a><br />
-<sub><b><a href="mailto:TBD@TBD.COM" title="contact">TBD@TBD.COM</a></b></sub></a><br />
-</td>
-  </tr>
+</tr>
 </table>
 
 # Acknowledgements

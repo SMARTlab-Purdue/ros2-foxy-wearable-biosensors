@@ -26,7 +26,10 @@ $ cd ~/ros2_ws
 $ colcon build --symlink-install
 ```
 
-# Supported Biosensors (v0.0.1 updated on Sep. 7th 2021)
+# Supported Wearable Biosensors 
+
+(v0.0.1 updated on Sep. 7th 2021)
+
 1) [Empatica E4 wristband](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/empatica_e4)
 2) [Emotiv Insight](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/emotiv_insight)
 3) [Shimmer3-GSR Unit+](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/ros1_shimmer3_gsr_ppg)

@@ -28,7 +28,7 @@ $ colcon build --symlink-install
 
 # Supported Wearable Biosensors 
 
-(v0.0.1 updated on Sep. 7th 2021)
+## v0.0.1, updated on Sep.11th 2021.
 
 1) [Empatica E4 wristband](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/empatica_e4)
 2) [Emotiv Insight](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/emotiv_insight)

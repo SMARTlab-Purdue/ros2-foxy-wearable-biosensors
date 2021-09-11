@@ -24,6 +24,7 @@ $ cd ~/ros2_ws/src
 $ git clone https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors.git
 $ cd ~/ros2_ws
 $ colcon build --symlink-install
+$ source source install/setup.bash
 ```
 
 # Supported Wearable Biosensors 

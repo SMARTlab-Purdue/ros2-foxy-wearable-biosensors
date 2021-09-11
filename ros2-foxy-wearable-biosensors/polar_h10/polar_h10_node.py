@@ -18,7 +18,7 @@ class ros2_polar_h10(Node):
         # For the generlized structure of ROS2 Node
         self.declare_parameter('Sensor_Enable', True) # Enable to publish sensor data (true)
         self.Parm_Sensor_Enable = self.get_parameter('Sensor_Enable').value 
-        self.declare_parameter('Chunk_Enable', True) # Enable to publish chunk data (true)
+        self.declare_parameter('Chunk_Enable', False) # Enable to publish chunk data (true)
         self.Parm_Chunk_Enable = self.get_parameter('Chunk_Enable').value 
         self.declare_parameter('Chunk_Length', 10) # Define the length of the chunk data
         self.Parm_Chunk_Length = self.get_parameter('Chunk_Length').value 

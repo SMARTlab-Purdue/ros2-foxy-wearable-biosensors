@@ -1,9 +1,11 @@
-#!/usr/bin/python
-import sys, struct, serial, os 
+import sys, struct, serial, os  # pip install pyserial
 import rclpy
 from rclpy.node import Node
 
 from std_msgs.msg import Float32, Float32MultiArray, Bool
+
+os.system("sudo chmod a+rw /dev/rfcomm0")
+os.system("sudo rfcomm bind 0 00:06:66:F2:AF:E9")
 
 class ros2_shimmer3(Node):
     #############################################################
@@ -55,7 +57,8 @@ class ros2_shimmer3(Node):
             #print ("0x%02x" % ord(ddata[0]))
             
         return
-
+    
+    #######################################3
     def read_sensor(self):
 
         #if len(sys.argv) < 2:

@@ -26,6 +26,7 @@ setup(
             'ROS2_Empatica_E4_Node = ros2-foxy-wearable-biosensors.empatica_e4.empatica_e4_node:main',
             'ROS2_Vernier_Respiration_Belt_Node = ros2-foxy-wearable-biosensors.vernier_respiration_belt.vernier_respiration_belt_node:main',
             'ROS2_Polar_H10_Node = ros2-foxy-wearable-biosensors.polar_h10.polar_h10_node:main',
+            'ROS2_Shimmer3_GSR_Node = ros2-foxy-wearable-biosensors.shimmer3_gsr.shimmer3_gsr_node:main',
         ],
     },
 )

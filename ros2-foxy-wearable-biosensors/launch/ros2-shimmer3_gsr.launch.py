@@ -22,7 +22,7 @@ def generate_launch_description():
     ros2_foxy_shimmer3_gsr_node = Node(
             package='ros2-foxy-wearable-biosensors', 
             #namespace='Subject_Number',
-            executable='Shimmer3_GSR_Node',
+            executable='ROS2_Shimmer3_GSR_Node',
             name='shimmer3_gsr_node',
             #output='screen',
             parameters=[{'Sensor_Enable': True, 

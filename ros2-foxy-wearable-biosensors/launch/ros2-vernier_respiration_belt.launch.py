@@ -22,7 +22,7 @@ def generate_launch_description():
     ros2_foxy_vernier_respiration_belt_node = Node(
             package='ros2-foxy-wearable-biosensors', 
             #namespace='Subject_Number',
-            executable='Vernier_Respiration_Belt_Node',
+            executable='ROS2_Vernier_Respiration_Belt_Node',
             name='vernier_respiration_belt_node',
             #output='screen',
             parameters=[{'Sensor_Enable': True, 

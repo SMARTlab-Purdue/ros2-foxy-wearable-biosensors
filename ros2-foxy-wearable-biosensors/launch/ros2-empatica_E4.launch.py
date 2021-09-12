@@ -22,7 +22,7 @@ def generate_launch_description():
     ros2_foxy_empatica_e4_node = Node(
             package='ros2-foxy-wearable-biosensors', 
             #namespace='Subject_Number',
-            executable='Empatica_E4_Node',
+            executable='ROS2_Empatica_E4_Node',
             name='empatica_e4_node',
             #output='screen',
             parameters=[{'Sensor_Enable': True, 

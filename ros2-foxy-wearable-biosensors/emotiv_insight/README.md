@@ -2,6 +2,9 @@
 <img align="right" width="300" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/emotiv-insight.jpg">
 Emotiv Insight is a wearable headset capable of reading 8 channels Electroencephalography (EEG) signals (e.g., AF3, AF4, T7, T8, and Pz). The sampling rate of each channel is 128 samples per second with 14 bits resolution. It has an 9-axis inertial measurement unit (IMU) sensor to detect head motions. Since it has lightweight and user-friendly design, many affective researchers utilize it to measure the EEG signal from a human body.
 
+
+* Official website: [https://www.emotiv.com](https://www.emotiv.com)
+
 ## Requirments
 1) [Emotiv Pro License](https://www.emotiv.com/emotivpro/)
 2) Install [Emotiv App (Ubuntu version)](https://www.emotiv.com/my-account/downloads/)

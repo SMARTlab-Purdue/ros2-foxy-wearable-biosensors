@@ -1,5 +1,5 @@
 ## Zephyr Bioharness Node
-<img align="right" width="200" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/Zephyr-TM-Bioharness.png">
+<img align="right" width="200" src="/master/media/img/zephyr_bioharness.png">
 The Zephyr Bioharness is a chest strap sensor designed for dynamic movement activities. The Bioharness is capable of publishing output summary data (e.g., heart rate, acceleration) at 1 Hz as well as raw waveforms (e.g., ECG Waveform), which can be used in more advanced feature engineering
 
 * Official website: [https://www.zephyranywhere.com/](https://www.zephyranywhere.com/)
@@ -46,5 +46,5 @@ $ros2 launch ros2-foxy-wearable-biosensors ros2-zephyr.launch.py
 
 ## Example of Published Topic Data
 <p align="center">
-<img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/zephyr_data.jpg" width="700" >
+<img src="/media/img/zephyr_bioharness_data.jpg" width="700" >
 </p>

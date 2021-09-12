@@ -3,6 +3,7 @@
 <img align="right" width="250" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/Polar-H10.jpg">
 The Polar H10 is a wearable heart rate biosensor and attached on the chest. It is mostly used for fitness objectives to read HR with 1Hz sampling time
 
+
 * Official website: [https://www.polar.com/us-en/products/accessories/h10_heart_rate_sensor](https://www.polar.com/us-en/products/accessories/h10_heart_rate_sensor)
 
 ## Requirments

@@ -1,6 +1,6 @@
 # ros2-foxy-wearable-biosensors
 <p align="center">
-<img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/ros2_biosensor_pkg.png" width="700" >
+<img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/ros2_biosensor_pkg.png" width="600" >
 </p>
 
 

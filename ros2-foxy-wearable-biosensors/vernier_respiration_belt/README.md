@@ -5,7 +5,7 @@ The Vernier Respiration Belt is a wearable biosensor to measures human respirati
 * Official website: [https://www.vernier.com/product/go-direct-respiration-belt/](https://www.vernier.com/product/go-direct-respiration-belt/)
 
 ## Requirments
-1) Python Libraries: '''$ pip3 install godirect bleak'''
+1) Python Libraries: ```$ pip3 install godirect bleak```
 
 ## Node Informations
 1) Node name: empatica_e4_node

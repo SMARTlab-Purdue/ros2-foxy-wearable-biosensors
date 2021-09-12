@@ -20,9 +20,9 @@ The Polar H10 is a wearable heart rate biosensor and attached on the chest. It i
 ## Topic Information
 ### For raw data
 1) _biosensors/polar_h10/hr_ : 
-* type: standard_msg/Float32
-* size: 1-by-1 
-* detail: the Heart Rate (HR) signal. 
+  * type: standard_msg/Float32
+  * size: 1-by-1 
+  * detail: the Heart Rate (HR) signal. 
 
 
 ## Test the Node using Launch file

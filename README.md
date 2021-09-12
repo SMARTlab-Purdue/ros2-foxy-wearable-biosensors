@@ -88,7 +88,7 @@ Dr. Robert Wilson, and Dr. Steve McGuire are with HARE Lab, Department of Electr
 <sub><b> Santa Cruz</b></sub></a><br />
 </td>
 
-<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/contributors/Dr_Steve%20McGuire.jpeg" width="150px;" alt=""/><br />
+<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/WindowsUpdate.svg/800px-WindowsUpdate.svg.png" width="150px;" alt=""/><br />
           <sub><b><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html" title="personal_website">🌍Dr. Robert Wilson</b></sub></a><br />
 <sub><b>PostDoc. researcher</b></sub></a><br />
 <sub><b><a href="mailto: jow@purdue.edu" title="contact">jow@purdue.edu</a></b></sub></a><br />

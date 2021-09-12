@@ -36,7 +36,7 @@ Emotiv Insight is a wearable headset capable of reading 8 channels Electroenceph
 * type: standard_msg/Float32MultiArray
 * size: 1-by-10 float array
 * detail: ["Q0","Q1","Q2","Q3","ACCX","ACCY","ACCZ","MAGX","MAGY","MAGZ"]
-5)_biosensors/emotiv_insight/dev_: 
+5) _biosensors/emotiv_insight/dev_: 
 * type: standard_msg/Float32MultiArray
 * size: 1-by-9 float array
 * detail: [Battery, Signal, AF3_Signal, T7_Signal, Pz_Signal, T8_Signal, AF4_Signal, OVERALL_Signal, BatteryPercent]

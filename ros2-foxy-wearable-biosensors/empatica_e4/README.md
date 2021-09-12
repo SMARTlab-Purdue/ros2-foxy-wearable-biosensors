@@ -57,15 +57,15 @@ The Empatica E4 is a wristband with an array of biosensors for physiological mon
 ### Chunk data
 1) _biosensors/empatica_e4/bvp_chunk_ : 
 * type: standard_msg/Float32MultiArray
-* size: 128-by-1 float array
+* size: 1-by-128 float array
 * detail: the Blood  Volume  Pulse (BVP) signals.
 2) _biosensors/empatica_e4/gsr_chunk :
 * type: standard_msg/Float32MultiArray
-* size: 128-by-1 float array
+* size: 1-by-128 float array
 * detail: the Electrodermal  Activity  (EDA) signals.
 3) _biosensors/empatica_e4/st_chunk : 
 * type: standard_msg/Float32MultiArray
-* size: 128-by-1 float array
+* size: 1-by-7 float array
 * detail: Skin Temperature (ST) signal.
 
 ## Test the Node using Launch file

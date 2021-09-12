@@ -4,7 +4,7 @@
 </p>
 
 Each package node follows a generalized structure as above figure. We categorized sensor data into three major types, using ROS 2 standard messages and separated per node. Hardware data indicates current battery levels and Bluetooth signal strength. Nodes publish raw data in real-time, with sampling rates based on the individual biosensor hardware specifications. 
-Chunk data, collected per node with predefined lengths, provide end-users with a framework for downstream processing (e.g., feature engineering and \ac{ML} applications). 
+Chunk data, collected per node with predefined lengths, provide end-users with a framework for downstream processing (e.g., feature engineering and Machine learning applications). 
 
 # Generalized ROS2 Parameters
 In each sensor node, there are three ROS 2 parameters: _Chuck_Enable_, _Chunk_Length_, _Sensor_Enable_.

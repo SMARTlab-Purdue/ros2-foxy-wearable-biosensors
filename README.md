@@ -1,6 +1,6 @@
 # ros2-foxy-wearable-biosensors
 <p align="center">
-<img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/ros2_biosensor_pkg.png" width="700" >
+<img src="/media/img/ros2_biosensor_pkg.png" width="700" >
 </p>
 
 
@@ -31,12 +31,12 @@ $ source source install/setup.bash
 
 ## v0.0.1, updated on Sep.11th 2021.
 
-1) [Empatica E4 wristband](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/empatica_e4)
-2) [Emotiv Insight](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/emotiv_insight)
-3) [Shimmer3-GSR Unit+](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/ros1_shimmer3_gsr_ppg)
-4) [Polar H10](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/polar_h10)
-5) [Vernier Respiration Belt](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/vernier_respiration_belt)
-6) [Zephyr Bioharness](https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/tree/master/ros2-foxy-wearable-biosensors/zephyr-ros-master)
+1) [Empatica E4 wristband](ros2-foxy-wearable-biosensors/empatica_e4)
+2) [Emotiv Insight](/ros2-foxy-wearable-biosensors/emotiv_insight)
+3) [Shimmer3-GSR Unit+](/ros2-foxy-wearable-biosensors/shimmer3_gsr)
+4) [Polar H10](/ros2-foxy-wearable-biosensors/polar_h10)
+5) [Vernier Respiration Belt](/ros2-foxy-wearable-biosensors/vernier_respiration_belt)
+6) [Zephyr Bioharness](/ros2-foxy-wearable-biosensors/zephyr-ros-master)
 7) TBD (will be added new sensors on v0.0.2)
 
 

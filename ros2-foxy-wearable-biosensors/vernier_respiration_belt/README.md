@@ -1,6 +1,7 @@
 ## Vernier Respiration Belt
 <img align="right" width="300" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/Vernier_Respiration-belt.jpg">
 The Vernier Respiration Belt is a wearable biosensor to measures human respiration rate from around the chest via Bluetooth. It is capable of measure from 0 to 50 N with 0.01 N resolution and breaths per minute (BPM) with 50 Hz sample rate.
+
 * Official website: [https://www.vernier.com/product/go-direct-respiration-belt/](https://www.vernier.com/product/go-direct-respiration-belt/)
 
 ## Requirments

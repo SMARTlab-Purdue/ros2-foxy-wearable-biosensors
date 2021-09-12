@@ -17,10 +17,16 @@ Emotiv Insight is a wearable headset capable of reading 8 channels Electroenceph
 ## Topic Information
 ### Raw data
 1) _biosensors/emotiv_insight/eeg_ :
+* type: standard_msg/Float32MultiArray
 2) _biosensors/emotiv_insight/mot_ :
+* type: standard_msg/Float32MultiArray
 3) _biosensors/emotiv_insight/met_ :
+* type: standard_msg/Float32MultiArray
 4) _biosensors/emotiv_insight/mot_ :
+* type: standard_msg/Float32MultiArray
 5) _biosensors/emotiv_insight/dev_ : 
+* type: standard_msg/Float32MultiArray
+
 
 ### Chunk Data
 1) _biosensors/emotiv_insight/eeg_chunk_ :
@@ -30,5 +36,5 @@ Emotiv Insight is a wearable headset capable of reading 8 channels Electroenceph
 # How to run the Node using Launch file
 
 ```bash
-$ros2 launch ros2-foxy-wearable-biosensors XXXXX
+$ros2 launch ros2-foxy-wearable-biosensors ros2-emotiv_insight.launch.py
 ```

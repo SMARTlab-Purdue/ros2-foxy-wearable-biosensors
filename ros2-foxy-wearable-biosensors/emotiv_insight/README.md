@@ -60,6 +60,8 @@ $ros2 launch ros2-foxy-wearable-biosensors ros2-emotiv_insight.launch.py
 ```
 
 # Example of Published Topic Data
-<img align="center" width="300" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/emotiv_data-1.jpg">
+<p align="center">
+<img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/emotiv_data-1.jpg" width="700" >
+</p>
 
 

@@ -1,5 +1,5 @@
 ## Zephyr Bioharness Node
-<img align="right" width="200" src="/master/media/img/zephyr_bioharness.png">
+<img align="right" width="200" src="/media/img/zephyr_bioharness.png">
 The Zephyr Bioharness is a chest strap sensor designed for dynamic movement activities. The Bioharness is capable of publishing output summary data (e.g., heart rate, acceleration) at 1 Hz as well as raw waveforms (e.g., ECG Waveform), which can be used in more advanced feature engineering
 
 * Official website: [https://www.zephyranywhere.com/](https://www.zephyranywhere.com/)

@@ -1,5 +1,5 @@
 ## Emotiv Insight
-<img align="right" width="300" src="media/img/emotiv_insight.jpg">
+<img align="right" width="300" src="./media/img/emotiv_insight.jpg">
 Emotiv Insight is a wearable headset capable of reading 8 channels Electroencephalography (EEG) signals (e.g., AF3, AF4, T7, T8, and Pz). The sampling rate of each channel is 128 samples per second with 14 bits resolution. It has an 9-axis inertial measurement unit (IMU) sensor to detect head motions. Since it has lightweight and user-friendly design, many affective researchers utilize it to measure the EEG signal from a human body.
 
 

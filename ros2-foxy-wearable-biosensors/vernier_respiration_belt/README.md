@@ -43,5 +43,5 @@ $ros2 launch ros2-foxy-wearable-biosensors ros2-vernier_respiration_belt.launch.
 
 ## Example of Published Topic Data
 <p align="center">
-<img src="/master/media/img/vernier_respiration_belt_data.jpg" width="700" >
+<img src="/media/img/vernier_respiration_belt_data.jpg" width="700" >
 </p>

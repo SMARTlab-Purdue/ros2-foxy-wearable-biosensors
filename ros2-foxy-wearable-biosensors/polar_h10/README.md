@@ -1,6 +1,6 @@
 ## Polar H10
 
-<img align="right" width="250" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/Polar-H10.jpg">
+<img align="right" width="250" src="/media/img/polar_h10.jpg">
 The Polar H10 is a wearable heart rate biosensor and attached on the chest. It is mostly used for fitness objectives to read HR with 1Hz sampling time
 
 
@@ -34,5 +34,5 @@ $ros2 launch ros2-foxy-wearable-biosensors ros2-polar_h10.launch.py
 
 # Example of Published Topic Data
 <p align="center">
-<img src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/polar_data.jpg" width="700" >
+<img src="/media/img/polar_h10_data.jpg" width="700" >
 </p>

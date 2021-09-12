@@ -1,5 +1,5 @@
 ## Emotiv Insight
-<img align="right" width="200" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/Shimmer%20GSR%202_1.png">
+<img align="right" width="250" src="https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors/blob/master/media/img/Shimmer%20GSR%202_1.png">
 The Shimmer3-GSR+ Unit is a wearable biosensor to measure Galvanic Skin Response (GSR) and Photoplethysmography (PPG) signals from the fingers or skins, converting to estimate HR [26].
 
 

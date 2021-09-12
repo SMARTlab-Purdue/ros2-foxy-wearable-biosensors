@@ -25,31 +25,31 @@ The Empatica E4 is a wristband with an array of biosensors for physiological mon
 * type: standard_msg/Float32
 * size: 1-by-1 
 * detail:the Blood  Volume  Pulse (BVP) signal. 
-3) _iosensors/empatica_e4/gsr_ :
+2) _iosensors/empatica_e4/gsr_ :
 * type: standard_msg/Float32
 * size: 1-by-1 
 * detail: the Electrodermal  Activity  (EDA) signal. 
-5) _biosensors/empatica_e4/hr_ : 
+3) _biosensors/empatica_e4/hr_ : 
 * type: standard_msg/Float32
 * size: 1-by-1 
 * detail: the Heart Rate (HR) signal. 
-7) _biosensors/empatica_e4/st_ : 
+4) _biosensors/empatica_e4/st_ : 
 * type: standard_msg/Float32
 * size: 1-by-1 
 * detail: Skin Temperature (ST) signal
-9) _biosensors/empatica_e4/ibi_ : 
+5) _biosensors/empatica_e4/ibi_ : 
 * type: standard_msg/Float32
 * size: 1-by-1 
 * detail:  the Inter-Beat-Interval (IBI) signal. 
-11) _biosensors/empatica_e4/acc_ : 
+6) _biosensors/empatica_e4/acc_ : 
 * type: standard_msg/Float32
 * size: 1-by-1 
 * detail: the Electrodermal  Activity  (EDA) signal.
-13) _biosensors/empatica_e4/bat_ : 
+7) _biosensors/empatica_e4/bat_ : 
 * type: standard_msg/Float32
 * size: 1-by-1 
 * detail: the Electrodermal  Activity  (EDA) signal.
-15) _biosensors/empatica_e4/tag_ : 
+8) _biosensors/empatica_e4/tag_ : 
 * type: standard_msg/Empty
 * size: 1-by-1 
 * detail: the Electrodermal  Activity  (EDA) signal. 
@@ -59,11 +59,11 @@ The Empatica E4 is a wristband with an array of biosensors for physiological mon
 * type: standard_msg/Float32MultiArray
 * size: 128-by-1 float array
 * detail: the Blood  Volume  Pulse (BVP) signals.
-3) _biosensors/empatica_e4/gsr_chunk :
+2) _biosensors/empatica_e4/gsr_chunk :
 * type: standard_msg/Float32MultiArray
 * size: 128-by-1 float array
 * detail: the Electrodermal  Activity  (EDA) signals.
-5) _biosensors/empatica_e4/st_chunk : 
+3) _biosensors/empatica_e4/st_chunk : 
 * type: standard_msg/Float32MultiArray
 * size: 128-by-1 float array
 * detail: Skin Temperature (ST) signal.

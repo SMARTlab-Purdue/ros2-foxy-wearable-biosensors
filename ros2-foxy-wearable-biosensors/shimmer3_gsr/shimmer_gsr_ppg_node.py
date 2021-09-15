@@ -71,12 +71,12 @@ class ros2_shimmer3(Node):
         # Publisher Parts
         #############################################################
         if self.Parm_Sensor_Enable:
-            self.pub_shimmer3_gsr_data = self.create_publisher(Float32, "biosensors/shimmer3/gsr", 10)
-            self.pub_shimmer3_ppg_data = self.create_publisher(Float32, "biosensors/shimmer3/ppg", 10)
+            self.pub_shimmer3_gsr_data = self.create_publisher(Float32, "biosensors/shimmer3_gsr/gsr", 10)
+            self.pub_shimmer3_ppg_data = self.create_publisher(Float32, "biosensors/shimmer3_gsr/ppg", 10)
 
             if self.Parm_Chunk_Enable:
-                self.pub_shimmer3_gsr_chunk_data = self.create_publisher(Float32MultiArray, "biosensors/shimmer3/gsr_chunk", 10) 
-                self.pub_shimmer3_ppg_chunk_data = self.create_publisher(Float32MultiArray, "biosensors/shimmer3/ppg_chunk", 10)
+                self.pub_shimmer3_gsr_chunk_data = self.create_publisher(Float32MultiArray, "biosensors/shimmer3_gsr/gsr_chunk", 10) 
+                self.pub_shimmer3_ppg_chunk_data = self.create_publisher(Float32MultiArray, "biosensors/shimmer3_gsr/ppg_chunk", 10)
 
         #print ("Packet Type\tTimestamp\tGSR\tPPG")
         

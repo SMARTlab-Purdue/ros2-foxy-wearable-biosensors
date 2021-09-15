@@ -111,20 +111,20 @@ Dr. Robert Wilson, and Dr. Steve McGuire are with HARE Lab, Department of Electr
 
 <table>
   <tr>
-<td align="center"><a href="https://www.ucsc.edu/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/WindowsUpdate.svg/800px-WindowsUpdate.svg.png" width="150px;" alt=""/><br />
+<td align="center"><a href="https://www.ucsc.edu/"><img src="/media/contributors/TBD_Contributors.png" width="150px;" alt=""/><br />
          </a><br />
 <sub><b></b></sub></a><br />
 <sub><b></b></sub></a><br />
 </td>
 
-<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/WindowsUpdate.svg/800px-WindowsUpdate.svg.png" width="150px;" alt=""/><br />
+<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="/media/contributors/TBD_Contributors.png" width="150px;" alt=""/><br />
           <sub><b><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html" title="personal_website">🌍TBD</b></sub></a><br />
 <sub><b>(TBD)position</b></sub></a><br />
 <sub><b><a href="mailto: TBD@TBD.COM" title="contact">TBD@TBD.COM</a></b></sub></a><br />
 </td>
 
 
-<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/WindowsUpdate.svg/800px-WindowsUpdate.svg.png" width="150px;" alt=""/><br />
+<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="/media/contributors/TBD_Contributors.png" width="150px;" alt=""/><br />
           <sub><b><a href="http://www.smart-laboratory.org/group/Wonse_Jo.html" title="personal_website">🌍TBD</b></sub></a><br />
 <sub><b>(TBD)position</b></sub></a><br />
 <sub><b><a href="mailto:TBD@TBD.COM" title="contact">TBD@TBD.COM</a></b></sub></a><br />

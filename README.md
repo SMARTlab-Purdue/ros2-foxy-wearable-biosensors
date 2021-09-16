@@ -84,14 +84,14 @@ Dr. Robert Wilson, and Dr. Steve McGuire are with HARE Lab, Department of Electr
 
 <table>
   <tr>
-<td align="center"><a href="https://www.ucsc.edu/"><img src="/media/contributors/Dr_Robert_Wilson.png" width="100px;" alt=""/><br />
+<td align="center"><a href="https://www.ucsc.edu/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/The_University_of_California_1868_UCSC.svg/150px-The_University_of_California_1868_UCSC.svg.png" width="100px;" alt=""/><br />
          </a><br />
 <sub><b>University of California,</b></sub></a><br />
 <sub><b> Santa Cruz</b></sub></a><br />
 </td>
 
-<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="/media/contributors/TBD_Contributors.png" width="150px;" alt=""/><br />
-          <sub><b><a href="https://engineering.ucsc.edu/people/smcguire" title="personal_website">🌍Dr. Robert Wilson</b></sub></a><br />
+<td align="center"><a href="https://engineering.ucsc.edu/people/smcguire"><img src="/media/contributors/Dr_Robert_Wilson.png" width="150px;" alt=""/><br />
+          <sub><b>🌍Dr. Robert Wilson</b></sub><br />
 <sub><b>PostDoc. researcher</b></sub></a><br />
 <sub><b><a href="mailto: robert.wilson@ucsc.edu" title="contact">robert.wilson@ucsc.edu</a></b></sub></a><br />
 </td>

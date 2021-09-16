@@ -84,7 +84,7 @@ Dr. Robert Wilson, and Dr. Steve McGuire are with HARE Lab, Department of Electr
 
 <table>
   <tr>
-<td align="center"><a href="https://www.ucsc.edu/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/The_University_of_California_1868_UCSC.svg/150px-The_University_of_California_1868_UCSC.svg.png" width="100px;" alt=""/><br />
+<td align="center"><a href="https://www.ucsc.edu/"><img src="/media/contributors/Dr_Robert_Wilson.png" width="100px;" alt=""/><br />
          </a><br />
 <sub><b>University of California,</b></sub></a><br />
 <sub><b> Santa Cruz</b></sub></a><br />

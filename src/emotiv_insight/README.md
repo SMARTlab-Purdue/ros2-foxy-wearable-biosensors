@@ -8,7 +8,18 @@ Emotiv Insight is a wearable headset capable of reading 8 channels Electroenceph
 
 ## Requirments
 1) [Emotiv Pro License](https://www.emotiv.com/emotivpro/)
-2) Install [Emotiv App (Ubuntu version)](https://www.emotiv.com/my-account/downloads/)
+update in user details '''''
+# Emotiv License Information (you should have the emotiv license from emotiv website)
+user_details = {
+	"license" : "your emotivpro license, which could use for third party app",
+	"client_id" : "your client id",
+	"client_secret" : "your client secret",
+	"debit" : 100
+}
+
+
+
+3) Install [Emotiv App (Ubuntu version)](https://www.emotiv.com/my-account/downloads/)
 
 
 ## Node Informations

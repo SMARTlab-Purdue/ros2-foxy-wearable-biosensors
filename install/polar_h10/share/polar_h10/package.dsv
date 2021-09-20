@@ -1,6 +1,0 @@
-source;share/polar_h10/hook/pythonpath.ps1
-source;share/polar_h10/hook/pythonpath.dsv
-source;share/polar_h10/hook/pythonpath.sh
-source;share/polar_h10/hook/ament_prefix_path.ps1
-source;share/polar_h10/hook/ament_prefix_path.dsv
-source;share/polar_h10/hook/ament_prefix_path.sh

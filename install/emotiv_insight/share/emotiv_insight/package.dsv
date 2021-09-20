@@ -1,6 +1,0 @@
-source;share/emotiv_insight/hook/pythonpath.ps1
-source;share/emotiv_insight/hook/pythonpath.dsv
-source;share/emotiv_insight/hook/pythonpath.sh
-source;share/emotiv_insight/hook/ament_prefix_path.ps1
-source;share/emotiv_insight/hook/ament_prefix_path.dsv
-source;share/emotiv_insight/hook/ament_prefix_path.sh

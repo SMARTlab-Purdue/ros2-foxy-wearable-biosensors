@@ -1,3 +1,0 @@
-[console_scripts]
-shimmer_gsr_ppg_node = shimmer3_gsr_unit.shimmer_gsr_ppg_node:main
-

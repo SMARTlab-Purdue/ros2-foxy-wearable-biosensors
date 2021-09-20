@@ -1,3 +1,0 @@
-[console_scripts]
-vernier_respiration_belt_node = vernier_respiration_belt.vernier_respiration_belt_node:main
-

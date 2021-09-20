@@ -1,3 +1,0 @@
-[console_scripts]
-polar_h10_node = polar_h10.polar_h10_node:main
-

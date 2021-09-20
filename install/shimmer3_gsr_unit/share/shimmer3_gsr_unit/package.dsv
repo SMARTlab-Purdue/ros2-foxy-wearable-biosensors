@@ -1,6 +1,0 @@
-source;share/shimmer3_gsr_unit/hook/pythonpath.ps1
-source;share/shimmer3_gsr_unit/hook/pythonpath.dsv
-source;share/shimmer3_gsr_unit/hook/pythonpath.sh
-source;share/shimmer3_gsr_unit/hook/ament_prefix_path.ps1
-source;share/shimmer3_gsr_unit/hook/ament_prefix_path.dsv
-source;share/shimmer3_gsr_unit/hook/ament_prefix_path.sh

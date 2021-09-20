@@ -1,3 +1,0 @@
-[console_scripts]
-emotiv_insight_node = emotiv_insight.emotiv_insight_node:main
-

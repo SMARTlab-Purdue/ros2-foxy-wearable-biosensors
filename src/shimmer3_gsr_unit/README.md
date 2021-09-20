@@ -41,7 +41,7 @@ The Shimmer3-GSR+ Unit is a wearable biosensor to measure Galvanic Skin Response
 ## Test the Node using Launch file
 
 ```bash
-$ros2 launch ros2-foxy-wearable-biosensors ros2-shimmer3_gsr.launch.py
+$ros2 launch shimmer3_gsr_unit ros2-shimmer3_gsr.launch.py
 ```
 
 ## Example of Published Topic Data

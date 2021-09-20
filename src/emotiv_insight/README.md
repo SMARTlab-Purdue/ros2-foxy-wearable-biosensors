@@ -56,7 +56,7 @@ Emotiv Insight is a wearable headset capable of reading 8 channels Electroenceph
 # Test the Node using Launch file
 
 ```bash
-$ros2 launch ros2-foxy-wearable-biosensors ros2-emotiv_insight.launch.py
+$ros2 launch emotiv_insight ros2-emotiv_insight.launch.py
 ```
 
 # Example of Published Topic Data

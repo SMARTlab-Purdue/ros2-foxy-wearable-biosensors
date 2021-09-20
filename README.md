@@ -19,12 +19,10 @@ $ pip3 install open-e4-client pexpect websocket-client
 
 # Installation
 ```bash
-$ sudo apt install ros-foxy-desktop 
+$ cd ~
 $ source /opt/ros/foxy/setup.bash
-$ mkdir -p ~/ros2_ws/src
-$ cd ~/ros2_ws/src
 $ git clone https://github.com/SMARTlab-Purdue/ros2-foxy-wearable-biosensors.git
-$ cd ~/ros2_ws
+$ cd ros2-foxy-wearable-biosensors
 $ colcon build --symlink-install
 $ source install/setup.bash
 ```

@@ -71,7 +71,7 @@ The Empatica E4 is a wristband with an array of biosensors for physiological mon
 ## Test the Node using Launch file
 
 ```bash
-$ros2 launch ros2-foxy-wearable-biosensors ros2-empatica_E4.launch.py
+$ros2 launch empatica_e4 ros2-empatica_E4.launch.py
 ```
 
 # Example of Published Topic Data

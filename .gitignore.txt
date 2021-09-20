@@ -1,1 +1,5 @@
 media/
+install/
+log/
+build/
+

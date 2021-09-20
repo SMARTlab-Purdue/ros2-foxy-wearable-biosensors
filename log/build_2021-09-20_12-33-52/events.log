@@ -1,0 +1,37 @@
+[0.000000] (-) TimerEvent: {}
+[0.000692] (emotiv_insight) JobQueued: {'identifier': 'emotiv_insight', 'dependencies': OrderedDict()}
+[0.000730] (empatica_e4) JobQueued: {'identifier': 'empatica_e4', 'dependencies': OrderedDict()}
+[0.000866] (polar_h10) JobQueued: {'identifier': 'polar_h10', 'dependencies': OrderedDict()}
+[0.001117] (shimmer3_gsr_unit) JobQueued: {'identifier': 'shimmer3_gsr_unit', 'dependencies': OrderedDict()}
+[0.001738] (vernier_respiration_belt) JobQueued: {'identifier': 'vernier_respiration_belt', 'dependencies': OrderedDict()}
+[0.001882] (zephyr-bioharness) JobQueued: {'identifier': 'zephyr-bioharness', 'dependencies': OrderedDict()}
+[0.002051] (emotiv_insight) JobStarted: {'identifier': 'emotiv_insight'}
+[0.010739] (empatica_e4) JobStarted: {'identifier': 'empatica_e4'}
+[0.018053] (polar_h10) JobStarted: {'identifier': 'polar_h10'}
+[0.024103] (shimmer3_gsr_unit) JobStarted: {'identifier': 'shimmer3_gsr_unit'}
+[0.031007] (vernier_respiration_belt) JobStarted: {'identifier': 'vernier_respiration_belt'}
+[0.037297] (zephyr-bioharness) JobStarted: {'identifier': 'zephyr-bioharness'}
+[0.100085] (-) TimerEvent: {}
+[0.200465] (-) TimerEvent: {}
+[0.300763] (-) TimerEvent: {}
+[0.401153] (-) TimerEvent: {}
+[0.501414] (-) TimerEvent: {}
+[0.601774] (-) TimerEvent: {}
+[0.702155] (-) TimerEvent: {}
+[0.803162] (-) TimerEvent: {}
+[0.903645] (-) TimerEvent: {}
+[1.004018] (-) TimerEvent: {}
+[1.104347] (-) TimerEvent: {}
+[1.204703] (-) TimerEvent: {}
+[1.304973] (-) TimerEvent: {}
+[1.405357] (-) TimerEvent: {}
+[1.505767] (-) TimerEvent: {}
+[1.606007] (-) TimerEvent: {}
+[1.642420] (zephyr-bioharness) StderrLine: {'line': b'Traceback (most recent call last):\n  File "/usr/lib/python3/dist-packages/colcon_core/executor/__init__.py", line 91, in __call__\n    rc = await self.task(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/colcon_core/task/__init__.py", line 93, in __call__\n    return await task_method(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/colcon_ros/task/ament_python/build.py", line 51, in build\n    setup_py_data = get_setup_data(self.context.pkg, env)\n  File "/usr/lib/python3/dist-packages/colcon_core/task/python/__init__.py", line 20, in get_setup_data\n    return dict(pkg.metadata[key](env))\n  File "/usr/lib/python3/dist-packages/colcon_ros/package_identification/ros.py", line 129, in getter\n    return get_setup_information(\n  File "/usr/lib/python3/dist-packages/colcon_python_setup_py/package_identification/python_setup_py.py", line 241, in get_setup_information\n    _setup_information_cache[hashable_env] = _get_setup_information(\n  File "/usr/lib/python3/dist-packages/colcon_python_setup_py/package_identification/python_setup_py.py", line 281, in _get_setup_information\n    result = subprocess.run(\n  File "/usr/lib/python3.8/subprocess.py", line 516, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command \'[\'/usr/bin/python3\', \'-c\', "import sys;from setuptools.extern.packaging.specifiers import SpecifierSet;from distutils.core import run_setup;dist = run_setup(    \'setup.py\', script_args=(\'--dry-run\',), stop_after=\'config\');skip_keys = (\'cmdclass\', \'distclass\', \'ext_modules\', \'metadata\');data = {    key: value for key, value in dist.__dict__.items()     if (        not key.startswith(\'_\') and         not callable(value) and         key not in skip_keys and         key not in dist.display_option_names    )};data[\'metadata\'] = {    k: v for k, v in dist.metadata.__dict__.items()     if k not in (\'license_files\', \'provides_extras\')};sys.stdout.buffer.write(repr(data).encode(\'utf-8\'))"]\' returned non-zero exit status 1.\n'}
+[1.644366] (zephyr-bioharness) JobEnded: {'identifier': 'zephyr-bioharness', 'rc': 1}
+[1.644809] (emotiv_insight) JobEnded: {'identifier': 'emotiv_insight', 'rc': 'SIGINT'}
+[1.645068] (empatica_e4) JobEnded: {'identifier': 'empatica_e4', 'rc': 'SIGINT'}
+[1.645275] (polar_h10) JobEnded: {'identifier': 'polar_h10', 'rc': 'SIGINT'}
+[1.645486] (shimmer3_gsr_unit) JobEnded: {'identifier': 'shimmer3_gsr_unit', 'rc': 'SIGINT'}
+[1.645695] (vernier_respiration_belt) JobEnded: {'identifier': 'vernier_respiration_belt', 'rc': 'SIGINT'}
+[1.655416] (-) EventReactorShutdown: {}

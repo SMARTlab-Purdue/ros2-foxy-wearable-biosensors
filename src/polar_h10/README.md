@@ -29,7 +29,7 @@ The Polar H10 is a wearable heart rate biosensor and attached on the chest. It i
 ## Test the Node using Launch file
 
 ```bash
-$ros2 launch ros2-foxy-wearable-biosensors ros2-polar_h10.launch.py
+$ros2 launch polar_h10 ros2-polar_h10.launch.py
 ```
 
 # Example of Published Topic Data

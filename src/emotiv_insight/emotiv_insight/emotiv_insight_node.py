@@ -49,8 +49,6 @@ user_details = {
 	"debit" : 100
 }
 
-
-
 user = user_details
 
 class ros2_emotiv_insight(Node):

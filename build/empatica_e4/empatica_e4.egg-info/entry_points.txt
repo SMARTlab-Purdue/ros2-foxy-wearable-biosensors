@@ -1,0 +1,3 @@
+[console_scripts]
+empatica_e4_node = empatica_e4.empatica_e4_node:main
+

@@ -1,0 +1,38 @@
+[1.304s] Invoking command in '/home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/src/shimmer3_gsr_unit': JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64" PYTHONPATH=/home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/shimmer3_gsr_unit build --build-base /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/build install --prefix /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit --record /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/install.log --single-version-externally-managed
+[1.716s] running egg_info
+[1.717s] creating ../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info
+[1.718s] writing ../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info/PKG-INFO
+[1.718s] writing dependency_links to ../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info/dependency_links.txt
+[1.719s] writing entry points to ../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info/entry_points.txt
+[1.719s] writing requirements to ../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info/requires.txt
+[1.720s] writing top-level names to ../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info/top_level.txt
+[1.721s] writing manifest file '../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info/SOURCES.txt'
+[1.776s] reading manifest file '../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info/SOURCES.txt'
+[1.777s] writing manifest file '../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info/SOURCES.txt'
+[1.778s] running build
+[1.778s] running build_py
+[1.778s] creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/build
+[1.778s] creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/build/lib
+[1.778s] creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/build/lib/shimmer3_gsr_unit
+[1.778s] copying shimmer3_gsr_unit/shimmer_gsr_ppg_node.py -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/build/lib/shimmer3_gsr_unit
+[1.778s] copying shimmer3_gsr_unit/__init__.py -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/build/lib/shimmer3_gsr_unit
+[1.778s] running install
+[1.779s] running install_lib
+[1.780s] creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/lib/python3.8/site-packages/shimmer3_gsr_unit
+[1.781s] copying /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/build/lib/shimmer3_gsr_unit/shimmer_gsr_ppg_node.py -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/lib/python3.8/site-packages/shimmer3_gsr_unit
+[1.781s] copying /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/build/lib/shimmer3_gsr_unit/__init__.py -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/lib/python3.8/site-packages/shimmer3_gsr_unit
+[1.781s] byte-compiling /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/lib/python3.8/site-packages/shimmer3_gsr_unit/shimmer_gsr_ppg_node.py to shimmer_gsr_ppg_node.cpython-38.pyc
+[1.784s] byte-compiling /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/lib/python3.8/site-packages/shimmer3_gsr_unit/__init__.py to __init__.cpython-38.pyc
+[1.784s] running install_data
+[1.785s] creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/share/ament_index
+[1.786s] creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/share/ament_index/resource_index
+[1.786s] creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/share/ament_index/resource_index/packages
+[1.786s] copying resource/shimmer3_gsr_unit -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/share/ament_index/resource_index/packages
+[1.786s] copying package.xml -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/share/shimmer3_gsr_unit
+[1.786s] copying launch/ros2-shimmer3_gsr.launch.py -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/share/shimmer3_gsr_unit
+[1.786s] running install_egg_info
+[1.788s] Copying ../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info to /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/lib/python3.8/site-packages/shimmer3_gsr_unit-0.0.1-py3.8.egg-info
+[1.789s] running install_scripts
+[1.812s] Installing shimmer_gsr_ppg_node script to /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/lib/shimmer3_gsr_unit
+[1.813s] writing list of installed files to '/home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/install.log'
+[1.851s] Invoked command in '/home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/src/shimmer3_gsr_unit' returned '0': JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64" PYTHONPATH=/home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/shimmer3_gsr_unit build --build-base /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/build install --prefix /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit --record /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/install.log --single-version-externally-managed

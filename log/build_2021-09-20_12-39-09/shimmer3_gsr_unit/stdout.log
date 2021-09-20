@@ -1,0 +1,36 @@
+running egg_info
+creating ../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info
+writing ../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info/PKG-INFO
+writing dependency_links to ../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info/dependency_links.txt
+writing entry points to ../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info/entry_points.txt
+writing requirements to ../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info/requires.txt
+writing top-level names to ../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info/top_level.txt
+writing manifest file '../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info/SOURCES.txt'
+reading manifest file '../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info/SOURCES.txt'
+writing manifest file '../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/build
+creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/build/lib
+creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/build/lib/shimmer3_gsr_unit
+copying shimmer3_gsr_unit/shimmer_gsr_ppg_node.py -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/build/lib/shimmer3_gsr_unit
+copying shimmer3_gsr_unit/__init__.py -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/build/lib/shimmer3_gsr_unit
+running install
+running install_lib
+creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/lib/python3.8/site-packages/shimmer3_gsr_unit
+copying /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/build/lib/shimmer3_gsr_unit/shimmer_gsr_ppg_node.py -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/lib/python3.8/site-packages/shimmer3_gsr_unit
+copying /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/build/lib/shimmer3_gsr_unit/__init__.py -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/lib/python3.8/site-packages/shimmer3_gsr_unit
+byte-compiling /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/lib/python3.8/site-packages/shimmer3_gsr_unit/shimmer_gsr_ppg_node.py to shimmer_gsr_ppg_node.cpython-38.pyc
+byte-compiling /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/lib/python3.8/site-packages/shimmer3_gsr_unit/__init__.py to __init__.cpython-38.pyc
+running install_data
+creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/share/ament_index
+creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/share/ament_index/resource_index
+creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/share/ament_index/resource_index/packages
+copying resource/shimmer3_gsr_unit -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/share/ament_index/resource_index/packages
+copying package.xml -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/share/shimmer3_gsr_unit
+copying launch/ros2-shimmer3_gsr.launch.py -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/share/shimmer3_gsr_unit
+running install_egg_info
+Copying ../../build/shimmer3_gsr_unit/shimmer3_gsr_unit.egg-info to /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/lib/python3.8/site-packages/shimmer3_gsr_unit-0.0.1-py3.8.egg-info
+running install_scripts
+Installing shimmer_gsr_ppg_node script to /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/shimmer3_gsr_unit/lib/shimmer3_gsr_unit
+writing list of installed files to '/home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/shimmer3_gsr_unit/install.log'

@@ -1,0 +1,38 @@
+[1.308s] Invoking command in '/home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/src/polar_h10': JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64" PYTHONPATH=/home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/polar_h10 build --build-base /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/polar_h10/build install --prefix /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10 --record /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/polar_h10/install.log --single-version-externally-managed
+[1.575s] running egg_info
+[1.575s] creating ../../build/polar_h10/polar_h10.egg-info
+[1.576s] writing ../../build/polar_h10/polar_h10.egg-info/PKG-INFO
+[1.576s] writing dependency_links to ../../build/polar_h10/polar_h10.egg-info/dependency_links.txt
+[1.576s] writing entry points to ../../build/polar_h10/polar_h10.egg-info/entry_points.txt
+[1.576s] writing requirements to ../../build/polar_h10/polar_h10.egg-info/requires.txt
+[1.576s] writing top-level names to ../../build/polar_h10/polar_h10.egg-info/top_level.txt
+[1.578s] writing manifest file '../../build/polar_h10/polar_h10.egg-info/SOURCES.txt'
+[1.633s] reading manifest file '../../build/polar_h10/polar_h10.egg-info/SOURCES.txt'
+[1.635s] writing manifest file '../../build/polar_h10/polar_h10.egg-info/SOURCES.txt'
+[1.635s] running build
+[1.635s] running build_py
+[1.635s] creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/polar_h10/build
+[1.636s] creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/polar_h10/build/lib
+[1.636s] creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/polar_h10/build/lib/polar_h10
+[1.636s] copying polar_h10/__init__.py -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/polar_h10/build/lib/polar_h10
+[1.636s] copying polar_h10/polar_h10_node.py -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/polar_h10/build/lib/polar_h10
+[1.636s] running install
+[1.636s] running install_lib
+[1.637s] creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10/lib/python3.8/site-packages/polar_h10
+[1.637s] copying /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/polar_h10/build/lib/polar_h10/__init__.py -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10/lib/python3.8/site-packages/polar_h10
+[1.638s] copying /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/polar_h10/build/lib/polar_h10/polar_h10_node.py -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10/lib/python3.8/site-packages/polar_h10
+[1.640s] byte-compiling /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10/lib/python3.8/site-packages/polar_h10/__init__.py to __init__.cpython-38.pyc
+[1.641s] byte-compiling /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10/lib/python3.8/site-packages/polar_h10/polar_h10_node.py to polar_h10_node.cpython-38.pyc
+[1.646s] running install_data
+[1.646s] creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10/share/ament_index
+[1.646s] creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10/share/ament_index/resource_index
+[1.646s] creating /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10/share/ament_index/resource_index/packages
+[1.646s] copying resource/polar_h10 -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10/share/ament_index/resource_index/packages
+[1.647s] copying package.xml -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10/share/polar_h10
+[1.647s] copying launch/ros2-polar_h10.launch.py -> /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10/share/polar_h10
+[1.647s] running install_egg_info
+[1.647s] Copying ../../build/polar_h10/polar_h10.egg-info to /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10/lib/python3.8/site-packages/polar_h10-0.0.1-py3.8.egg-info
+[1.647s] running install_scripts
+[1.670s] Installing polar_h10_node script to /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10/lib/polar_h10
+[1.670s] writing list of installed files to '/home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/polar_h10/install.log'
+[1.735s] Invoked command in '/home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/src/polar_h10' returned '0': JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64" PYTHONPATH=/home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/polar_h10 build --build-base /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/polar_h10/build install --prefix /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/install/polar_h10 --record /home/heav101-pc1/ros2_foxy/src/ros2-foxy-wearable-biosensors/build/polar_h10/install.log --single-version-externally-managed

@@ -38,7 +38,7 @@ The Vernier Respiration Belt is a wearable biosensor to measures human respirati
 ## Test the Node using Launch file
 
 ```bash
-$ros2 launch ros2-foxy-wearable-biosensors ros2-vernier_respiration_belt.launch.py
+$ros2 launch vernier_respiration_belt ros2-vernier_respiration_belt.launch.py
 ```
 
 ## Example of Published Topic Data

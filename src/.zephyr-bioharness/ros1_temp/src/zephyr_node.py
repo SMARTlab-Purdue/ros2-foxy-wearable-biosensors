@@ -9,10 +9,18 @@ from core_z.zephyr_dev_async import *
 from zephyr.msg import *
 
 
-"""Questions:
-1. How to deal with Waveform messages?
--Can use Biosppy to extract data as we want
--For now, just use the summary data"""
+'''
+Intended to use 30s windows of data for feature engineering:
+
+Breathing Waveform - Report Fq: 1.008Hz
+                     Samples/Report: 18 samples
+                     Time between samples: 56ms
+                     Data Min Needed: 30 Waveforms
+                    
+ECG Waveform - Report Fq: 252Hz
+               Samples/Report: 63 samples
+               Time between samples: 4ms
+               Data Min Needed: 119 Waveforms'''
 
 class ROSActions(ZephyrDataActions):
     
@@ -23,11 +31,11 @@ class ROSActions(ZephyrDataActions):
         self.hrv_pub = rospy.Publisher('hrv', HRV, queue_size=10)
         self.br_pub = rospy.Publisher('br', Breath, queue_size=10)
         
-        #self.ecg_pub = rospy.Publisher('ECG', SkinTemp, queue_size=10)
+        self.ecg_wv_pub = rospy.Publisher('ecg_chunk', Float32MultiArray, queue_size=10)
+        self.br_wv_pub = rospy.Publisher('br_chunk', Float32MultiArray, queue_size=10)
         
-        self.hr_time = rospy.Time.now()
-        self.hrv_time = rospy.Time.now()
-        self.br_time = rospy.Time.now()         
+        self.rr_wv = []
+        self.ecg_wv = []
         
     def onSummary(self,msg):
         self.rate = rospy.Rate(10)
@@ -63,21 +71,25 @@ class ROSActions(ZephyrDataActions):
         
         self.rate.sleep()
             
-    #def onECG(self, msg):
-    #    #8 msgs per bluetooth payload
-    #    self.rate = rospy.Rate(10)
-    #    ecg = msg.waveform
-    #    tm_pts, self.skinTemp_time = self.timeParse(previous_time=self.ecg_time,msg_split=63)
-    #    
-    #    for i in range(0,len(ecg)):
-    #        msg = SkinTemp()
-    #        msg.header = std_msgs.msg.Header()
-    #        msg.header.stamp = tm_pts[i]
-    #        #msg.header.stamp = rospy.Time.now()
-    #        msg.temp = ecg[i]
-    #        self.ecg_pub.publish(msg)
-    #        self.rate.sleep()
+    def onECG(self, msg):
+        self.ecg_wv_pub.publish(Float32MultiArray(data=msg.waveform))
+        #Use 3rd party biosignal library for further analysis - Pyphysio Example Below - Requires import pyphysio as ph
+        #self.ecg_wv.append(msg.waveform)
+        #if len(self.ecg_wv) >= 119: # Waveforms needed for 30s of data
+        #    flat_ecg = [item for elem in self.ecg_wv for item in elem]
+        #    ecg = ph.EvenlySignal(values = flat_ecg, sampling_freq = 63, signal_type = 'ecg')
+        #    ecg.plot('r')
+        #    self.rr_wv.pop(0)
+        #    pause(.001) #requires import sys
 
+    def onBreath(self, msg):
+        self.br_wv_pub.publish(Float32MultiArray(data=msg.waveform))
+        #Use 3rd party biosignal library for further analysis - See above example
+        #self.rr_wv.append(msg.waveform)
+        #if len(self.ecg_wv) >= 30: # Waveforms needed for 30s of data
+        #    pass
+        
+        
     @classmethod
     def timeParse(cls, previous_time, msg_split):        
         incoming_time = rospy.Time.now()

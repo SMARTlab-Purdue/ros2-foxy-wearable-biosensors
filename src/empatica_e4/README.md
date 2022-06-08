@@ -42,7 +42,7 @@ The Empatica E4 is a wristband with an array of biosensors for physiological mon
 * size: 1-by-1 
 * detail:  the Inter-Beat-Interval (IBI) signal. 
 6) _biosensors/empatica_e4/acc_ : 
-* type: standard_msg/Float32
+* type: standard_msg/Float32MultiArray
 * size: 1-by-1 
 * detail: the Electrodermal  Activity  (EDA) signal.
 7) _biosensors/empatica_e4/bat_ : 

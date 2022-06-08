@@ -44,7 +44,7 @@ The Empatica E4 is a wristband with an array of biosensors for physiological mon
 6) _biosensors/empatica_e4/acc_ : 
 * type: standard_msg/Float32MultiArray
 * size: 1-by-1 
-* detail: the Electrodermal  Activity  (EDA) signal.
+* detail: the accelerometer (ACC) data.
 7) _biosensors/empatica_e4/bat_ : 
 * type: standard_msg/Float32
 * size: 1-by-1 
